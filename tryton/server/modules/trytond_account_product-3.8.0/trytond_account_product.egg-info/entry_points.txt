@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    account_product = trytond.modules.account_product
+    

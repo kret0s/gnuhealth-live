@@ -1,0 +1,1 @@
+from test_health_inpatient_calendar import suite

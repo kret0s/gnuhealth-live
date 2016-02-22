@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    product = trytond.modules.product
+    

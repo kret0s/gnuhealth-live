@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<form string="Pregnancies">
+    <group id="group_pregnancy_header" colspan="4" col="8">
+        <label name="name"/>
+        <field name="name"/>
+        <label name="healthprof"/>
+        <field name="healthprof"/>
+        <label name="institution"/>
+        <field name="institution"/>
+        <newline/>
+        <label name="gravida"/>
+        <field name="gravida"/>
+        <label name="lmp"/>
+        <field name="lmp"/>
+        <label name="pdd"/>
+        <field name="pdd"/>
+        <label name="current_pregnancy"/>
+        <field name="current_pregnancy"/>
+    </group>
+    <newline/>
+    <field colspan="4" name="prenatal_evaluations"/>
+    <newline/>
+    <field name="perinatal"/>
+    <field name="puerperium_monitor"/>
+    <newline/>
+    <group id="group_pregnancy_footer1" colspan="4" col="8">
+        <label name="fetuses"/>
+        <field name="fetuses"/>
+        <label name="monozygotic"/>
+        <field name="monozygotic"/>
+        <label name="iugr"/>
+        <field name="iugr"/>
+        <label name="warning"/>
+        <field name="warning"/>
+    </group>
+    <newline/>
+    <group id="group_pregnancy_footer2" colspan="4" col="12">
+        <label name="reverse"/>
+        <field name="reverse"/>
+        <label name="pregnancy_end_date"/>
+        <field name="pregnancy_end_date"/>
+        <label name="reverse_weeks"/>
+        <field name="reverse_weeks"/>
+        <label name="pregnancy_end_result"/>
+        <field name="pregnancy_end_result"/>
+        <label name="home_birth"/>
+        <field name="home_birth"/>
+        <label name="bba"/>
+        <field name="bba"/>
+    </group>
+</form>

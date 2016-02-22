@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<form string="patient">
+    <!-- Main Info -->
+    <group string="Main Info" id="patient_main_info">
+        <group colspan="3" id="patient_main_info_name">
+            <group colspan="3" col="9" id="patient_main_info_3">
+                <field colspan="4" name="name"/>
+                <field name="gender" width="60"/>
+                <label name="age"/>
+                <field name="age" width="80"/>
+            </group>
+            <newline/>
+            <group id="critical_info" string="Critical Information">
+                <field height="120" name="critical_summary"/>
+                <field height="120" name="critical_info"/>
+            </group>
+        </group>
+        <group id="patient__pic">
+            <field xfill="0" xexpand="1" name="photo" height="200" width="200" widget="image"/>
+        </group>
+    </group>
+    <newline/>
+    <notebook>
+        <page string="General Info" id="general_info">
+            <notebook>
+                <page string="Main" id="main_info_page">
+                    <group colspan="4" col="8" id="general_info">
+                        <label name="primary_care_doctor"/>
+                        <field name="primary_care_doctor"/>
+                        <label name="family"/>
+                        <field name="family"/>
+                        <field name="marital_status"/>
+                        <label name="current_insurance"/>
+                        <field name="current_insurance"/>
+                    </group>
+                    <newline/>
+                    <field name="diseases" colspan="4" yfill="1"/>
+                    
+                    <group string="Notepad" id="patient_notepad">
+                        <field height="100" name="general_info"/>
+                    </group>
+                    <newline/>
+                    <group colspan="4" col="10" id="patient_info_2">
+                        <label name="dob"/>
+                        <field name="dob"/>
+<!--
+From 2.6 we use the "PUID" (ref) field as the main code.
+We go towards the Unique Person Identifier
+If your patient has different clinical history codes (from different centers)
+you can put them in the Clinical History Number in the alternative IDs of the
+associated Party.
+
+You might also want to use the Health_archives module, to associate the legacy
+code with the unique patient ID.
+
+                        <label name="identification_code"/>
+                        <label name="identification_code"/>
+-->
+                        <label name="puid"/>
+                        <field name="puid"/>
+
+                        <label name="blood_type"/>
+                        <field name="blood_type" width="20"/>
+                        <field name="rh" width="20"/>
+                    </group>
+                </page>
+                <page string="Misc" id="misc_info_page">
+                    <group colspan="4" id="misc_info_group">
+                        <label name="biological_sex"/>
+                        <field name="biological_sex"/>
+                          
+                        <label name="current_address"/>
+                        <field name="current_address"/>
+                    </group>
+                    <newline/>
+                    <group colspan="4" col="6" id="misc_info_deceased">
+                        <label name="deceased"/>
+                        <field name="deceased"/>
+                        <label name="dod"/>
+                        <field name="dod"/>
+                        <label name="cod"/>
+                        <field name="cod"/>
+                    </group>
+                </page>
+            </notebook>
+        </page>
+
+        <!-- Patient Medication and Vaccinations -->
+        <page string="Medication" id="patient_medication">
+            <field name="medications"/>
+            <field name="vaccinations"/>
+        </page>
+
+        <!-- Patient Health Conditions 
+        <page string="Conditions" id="patient_diseases">
+        </page>
+        -->
+        
+    </notebook>
+</form>

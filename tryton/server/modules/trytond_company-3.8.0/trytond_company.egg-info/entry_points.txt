@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    company = trytond.modules.company
+    

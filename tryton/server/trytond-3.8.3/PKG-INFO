@@ -1,0 +1,124 @@
+Metadata-Version: 1.1
+Name: trytond
+Version: 3.8.3
+Summary: Tryton server
+Home-page: http://www.tryton.org/
+Author: Tryton
+Author-email: issue_tracker@tryton.org
+License: GPL-3
+Download-URL: http://downloads.tryton.org/3.8/
+Description: trytond
+        =======
+        
+        The server of the Tryton application platform.
+        A three-tiers  high-level general purpose application platform
+        written in Python and use Postgresql as main database engine.
+        It is the core base of an Open Source ERP.
+        It provides modularity, scalability and security.
+        
+        Installing
+        ----------
+        
+        See INSTALL
+        
+        Package Contents
+        ----------------
+        
+          bin/
+              Script for startup.
+        
+          doc/
+              sphinx documentation in reStructuredText.
+              To generate the HTML (trytond module must be in PYTHONPATH):
+        
+                sphinx-build doc/ doc/
+        
+          etc/
+              Configuration files.
+        
+          trytond/
+              trytond sources.
+        
+        Database Backends
+        -----------------
+        
+        Tryton is mainly developed for PostgreSQL (8.2 or later) but there are other 
+        backends available. Here are some warnings about using other backends:
+        
+          * MySQL
+        
+            * The lock implementation of MySQL requires that Tryton locks all tables.
+        
+            * There are problems with floating-point comparisons.
+              See: http://dev.mysql.com/doc/refman/5.5/en/problems-with-float.html
+        
+            * Tryton uses a VARCHAR(255) for Char, Selection and Reference fields.
+        
+            * MySQL can not create indexes containing text or blob fields.
+        
+            * Timestamp has a precision of second which is used for optimistic lock.
+        
+            * Tryton uses a DECIMAL(65, 30) for Decimal fields and DOUBLE(255, 30) for
+              Float fields.
+        
+            * MySQL version should be 5.0 or later.
+        
+          * SQLite
+        
+            * SQLite can not alter column definitions nor create foreign keys.
+        
+            * SQL constraints are validated by Tryton instead of database.
+        
+            * Timestamp has a precision of second which is used for optimistic lock.
+        
+        Support
+        -------
+        
+        If you encounter any problems with Tryton, please don't hesitate to ask
+        questions on the Tryton bug tracker, mailing list, wiki or IRC channel:
+        
+          http://bugs.tryton.org/
+          http://groups.tryton.org/
+          http://wiki.tryton.org/
+          irc://irc.freenode.net/tryton
+        
+        License
+        -------
+        
+        See LICENSE
+        
+        Copyright
+        ---------
+        
+        See COPYRIGHT
+        
+        
+        For more information please visit the Tryton web site:
+        
+          http://www.tryton.org/
+        
+Keywords: business application platform ERP
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: No Input/Output (Daemon)
+Classifier: Framework :: Tryton
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Natural Language :: Bulgarian
+Classifier: Natural Language :: Catalan
+Classifier: Natural Language :: Czech
+Classifier: Natural Language :: Dutch
+Classifier: Natural Language :: English
+Classifier: Natural Language :: French
+Classifier: Natural Language :: German
+Classifier: Natural Language :: Hungarian
+Classifier: Natural Language :: Italian
+Classifier: Natural Language :: Portuguese (Brazilian)
+Classifier: Natural Language :: Russian
+Classifier: Natural Language :: Slovenian
+Classifier: Natural Language :: Spanish
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks

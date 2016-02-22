@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+
+        <record model="ir.action.report" id="report_patient_labtest_report">
+            <field name="name">Lab Report</field>
+            <field name="model">gnuhealth.lab</field>
+            <field name="report_name">patient.labtest.report</field>
+            <field name="report">health_lab/report/labtest_report.odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_patient_labtest_report_keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.lab,-1</field>
+            <field name="action" ref="report_patient_labtest_report"/>
+        </record>
+
+    </data>
+</tryton>

@@ -1,0 +1,4 @@
+trytond_account >= 3.8, < 3.9
+trytond_company >= 3.8, < 3.9
+trytond_product >= 3.8, < 3.9
+trytond >= 3.8, < 3.9

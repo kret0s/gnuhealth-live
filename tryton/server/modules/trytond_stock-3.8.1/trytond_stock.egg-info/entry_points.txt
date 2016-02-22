@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    stock = trytond.modules.stock
+    

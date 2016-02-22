@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+<!-- Add Genetics icon -->
+
+        <record model="ir.ui.icon" id="gnuhealth_dna_icon">
+            <field name="name">icon-dna</field>
+            <field name="path">icons/dna.svg</field>
+        </record>
+
+        <menuitem name="Genetics" parent="health.gnuhealth_conf_menu"
+            id="gnuhealth_conf_genetics" icon="icon-dna"/>
+
+<!-- Add other relevant icons -->
+
+        <record model="ir.ui.icon" id="gnuhealth_list_icon">
+            <field name="name">gnuhealth-list</field>
+            <field name="path">../health/icons/tryton-list.svg</field>
+        </record>
+
+<!-- Genetic Risks -->
+
+        <record model="ir.ui.view" id="gnuhealth_disease_gene_view">
+            <field name="model">gnuhealth.disease.gene</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_disease_gene</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_disease_gene_tree">
+            <field name="model">gnuhealth.disease.gene</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_disease_gene_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_disease_gene">
+            <field name="name">Disease Genes</field>
+            <field name="res_model">gnuhealth.disease.gene</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_disease_gene_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_disease_gene_tree"/>
+            <field name="act_window" ref="gnuhealth_action_disease_gene"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_disease_gene_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_disease_gene_view"/>
+            <field name="act_window" ref="gnuhealth_action_disease_gene"/>
+        </record>
+
+        <menuitem parent="gnuhealth_conf_genetics"
+            action="gnuhealth_action_disease_gene"
+            id="gnuhealth_conf_disease_genes" icon="gnuhealth-list"/>
+
+<!-- Patient Genetic Risk -->
+
+        <record model="ir.ui.view" id="gnuhealth_genetic_risk_view">
+            <field name="model">gnuhealth.patient.genetic.risk</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_genetic_risk</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_genetic_risk_tree">
+            <field name="model">gnuhealth.patient.genetic.risk</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_genetic_risk_tree</field>
+        </record>
+
+<!-- Family Diseases -->
+
+        <record model="ir.ui.view" id="gnuhealth_family_diseases_view">
+            <field name="model">gnuhealth.patient.family.diseases</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_family_diseases</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_family_diseases_tree">
+            <field name="model">gnuhealth.patient.family.diseases</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_family_diseases_tree</field>
+        </record>
+
+<!-- Include Family History and Genetic Risks on the patient chart -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_view">
+            <field name="model">gnuhealth.patient</field>
+            <field name="inherit" ref="health.gnuhealth_patient_view_form" />
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient</field>
+        </record>
+
+    </data>
+</tryton>

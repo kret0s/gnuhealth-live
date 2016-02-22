@@ -1,0 +1,11 @@
+python-dateutil
+chardet
+
+[cdecimal]
+cdecimal
+
+[calendar]
+GooCalendar
+
+[simplejson]
+simplejson

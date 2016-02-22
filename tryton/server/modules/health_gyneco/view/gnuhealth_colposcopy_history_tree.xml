@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<tree editable="top" string="Colposcopy Tests">
+    <field name="evaluation_date" widget="date"/>
+    <field name="result" expand="1"/>
+    <field name="comments" expand="1"/>
+    <field name="healthprof" expand="1"/>
+    <field name="institution" expand="1"/>
+</tree>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file is part of GNU Health. GPL v3+ -->
+<!-- Luis Falcon . GNU Solidario -->
+<!-- Default template for permission groups -->
+
+<tryton>
+    <data>
+
+<!-- BEGIN GYNECOLOGY AND OBSTETRICS ADMINISTRATION GROUP ACCESS RIGHTS -->
+
+<!-- Create the Health Administration group -->
+
+        <record model="res.group" id="group_health_gyneco_admin">
+            <field name="name">Health Gynecology and Obstetrics Administration</field>
+        </record>
+
+<!-- Assign the Group to the "admin" user -->
+
+        <record model="res.user-res.group" id="user_admin_group_health_gyneco">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_health_gyneco_admin"/>
+        </record>
+
+<!-- Access to Menus -->
+
+<!-- Access rights to models for the health gynecology and obstetrics admin group -->
+
+        <record model="ir.model.access" id="access_health_gyneco_perinatal_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.perinatal')]"/>
+            <field name="group" ref="group_health_gyneco_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_perinatal_monitor_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.perinatal.monitor')]"/>
+            <field name="group" ref="group_health_gyneco_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_puerperium_monitor_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.puerperium.monitor')]"/>
+            <field name="group" ref="group_health_gyneco_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_menstrual_history_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.menstrual_history')]"/>
+            <field name="group" ref="group_health_gyneco_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_mammography_history_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.mammography_history')]"/>
+            <field name="group" ref="group_health_gyneco_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_pap_history_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.pap_history')]"/>
+            <field name="group" ref="group_health_gyneco_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_colposcopy_history_admin">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.colposcopy_history')]"/>
+            <field name="group" ref="group_health_gyneco_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+
+<!-- END OF GYNECOLOGY AND OBSTETRICS ADMINISTRATION GROUP ACCESS RIGHTS -->
+
+
+<!-- BEGIN DEFAULT GROUP ACCESS RIGHTS -->
+
+<!-- Default access rights to models -->
+
+        <record model="ir.model.access" id="access_health_gyneco_perinatal">
+            <field name="model" search="[('model', '=', 'gnuhealth.perinatal')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_perinatal_monitor">
+            <field name="model" search="[('model', '=', 'gnuhealth.perinatal.monitor')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_puerperium_monitor">
+            <field name="model" search="[('model', '=', 'gnuhealth.puerperium.monitor')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_menstrual_history">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.menstrual_history')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_mammography_history">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.mammography_history')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_pap_history">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.pap_history')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_colposcopy_history">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.colposcopy_history')]"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+
+<!-- END OF DEFAULT ACCESS RIGHTS -->
+
+
+<!-- BEGIN DOCTOR GROUP ACCESS RIGHTS -->
+
+<!-- Access rights to models for the health doctor group -->
+
+        <record model="ir.model.access" id="access_health_gyneco_perinatal_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.perinatal')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_perinatal_monitor_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.perinatal.monitor')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_puerperium_monitor_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.puerperium.monitor')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_menstrual_history_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.menstrual_history')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_mammography_history_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.mammography_history')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_pap_history_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.pap_history')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_gyneco_colposcopy_history_doctor">
+            <field name="model" search="[('model', '=', 'gnuhealth.patient.colposcopy_history')]"/>
+            <field name="group" ref="health.group_health_doctor"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+<!-- END OF DOCTOR GROUP ACCESS RIGHTS -->
+
+<!-- BEGIN FRONTDESK ACCESS RIGHTS: RESTRICT ALL RELEVANT GYNECO FIELDS ON PATIENT MODEL -->
+
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_menarche">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'menarche')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_menopause">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'menopause')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_menopausal">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'menopausal')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_mammography">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'mammography')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_mammography_last">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'mammography_last')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_breast_exam">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'breast_self_examination')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_stillbirths">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'stillbirths')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_pregnant">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'currently_pregnant')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_fertile">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'fertile')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_full_term">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'full_term')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_abortions">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'abortions')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_premature">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'premature')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_gravida">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'gravida')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_colposcopy">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'colposcopy')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_colposcopy_last">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'colposcopy_last')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_pap_test">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'pap_test')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+        <record model="ir.model.field.access" id="access_health_patient_frontdesk_field_pap_test_last">
+            <field name="field" search="[('model.model', '=', 'gnuhealth.patient'), ('name', '=', 'pap_test_last')]"/>
+            <field name="group" ref="health.group_health_frontdesk"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+        </record>
+
+<!-- END FRONTDESK ACCESS RIGHTS -->
+
+    </data>
+</tryton>

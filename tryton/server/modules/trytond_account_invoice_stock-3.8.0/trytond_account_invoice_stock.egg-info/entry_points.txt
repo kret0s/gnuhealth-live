@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    account_invoice_stock = trytond.modules.account_invoice_stock
+    

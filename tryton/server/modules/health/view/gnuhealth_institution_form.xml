@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<form string="Health Institution">
+    <group id="institution_header">
+        <group id="institution_main_info" colspan="3">
+            <label name="name"/>
+            <field name="name"/>
+            <label name="code"/>
+            <field name="code"/>
+            <newline/>
+            <label name="institution_type"/>
+            <field name="institution_type"/>
+            <label name="main_specialty"/>
+            <field name="main_specialty"/>
+            <label name="public_level"/>
+            <field name="public_level"/>
+            <label name="teaching"/>
+            <field name="teaching"/>
+            <label name="heliport"/>
+            <field name="heliport"/>
+            <newline/>
+            <label name="trauma_center"/>
+            <field name="trauma_center"/>
+            <label name="trauma_level"/>
+            <field name="trauma_level"/>
+            <newline/>
+            <label name="beds"/>
+            <field name="beds"/>
+            <label name="operating_room"/>
+            <field name="operating_room"/>
+            <label name="or_number"/>
+            <field name="or_number"/>
+
+        </group>
+        <group string="Institution Picture" id="institution_picture">
+            <field xfill="0" xexpand="1" name="picture" height="200" width="200" widget="image"/>
+        </group>
+    </group>
+    <newline/>
+    <field name="specialties"/>
+    <newline/>
+    <field name="operational_sectors"/>
+    <newline/>
+    <field colspan="4" name="extra_info"/>
+
+</form>

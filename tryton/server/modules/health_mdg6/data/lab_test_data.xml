@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<tryton>
+    <data skiptest="1" noupdate="0">
+
+<!-- TEMPLATES DEFINITION-->
+
+        <record id="product_template_bacilloscopy_ZN_analysischarges0" model="product.template">
+            <field name="name">Ziehl Neelsen Bacilloscopy Analysis Charges</field>
+            <field eval="1.0" name="list_price"/>
+            <field eval="0.0" name="cost_price"/>
+            <field name="default_uom" ref="product.uom_unit"/>
+            <field name="type">service</field>
+            <field name="category" ref="health_lab.product_category_labservices0"/>
+        </record>
+
+        <record id="product_template_bacilloscopy_FL_analysischarges0" model="product.template">
+            <field name="name">Fluorescent Bacilloscopy Analysis Charges</field>
+            <field eval="1.0" name="list_price"/>
+            <field eval="0.0" name="cost_price"/>
+            <field name="default_uom" ref="product.uom_unit"/>
+            <field name="type">service</field>
+            <field name="category" ref="health_lab.product_category_labservices0"/>
+        </record>
+
+
+        <record id="product_template_culture_lj_analysischarges0" model="product.template">
+            <field name="name">Lowenstein-Jensen Culture Analysis Charges</field>
+            <field eval="1.0" name="list_price"/>
+            <field eval="0.0" name="cost_price"/>
+            <field name="default_uom" ref="product.uom_unit"/>
+            <field name="type">service</field>
+            <field name="category" ref="health_lab.product_category_labservices0"/>
+        </record>
+
+        <record id="product_template_bactec_culture_analysischarges0" model="product.template">
+            <field name="name">BACTEC Culture Analysis Charges</field>
+            <field eval="1.0" name="list_price"/>
+            <field eval="0.0" name="cost_price"/>
+            <field name="default_uom" ref="product.uom_unit"/>
+            <field name="type">service</field>
+            <field name="category" ref="health_lab.product_category_labservices0"/>
+        </record>
+
+        <record id="product_template_xpert_mtb_rif_analysischarges0" model="product.template">
+            <field name="name">Xpert MTB-RIF Analysis Charges</field>
+            <field eval="1.0" name="list_price"/>
+            <field eval="0.0" name="cost_price"/>
+            <field name="default_uom" ref="product.uom_unit"/>
+            <field name="type">service</field>
+            <field name="category" ref="health_lab.product_category_labservices0"/>
+        </record>
+
+        <record id="product_template_ppd_analysischarges0" model="product.template">
+            <field name="name">Purified Protein Derivative - PPD Analysis Charges</field>
+            <field eval="1.0" name="list_price"/>
+            <field eval="0.0" name="cost_price"/>
+            <field name="default_uom" ref="product.uom_unit"/>
+            <field name="type">service</field>
+            <field name="category" ref="health_lab.product_category_labservices0"/>
+        </record>
+
+
+<!-- HIV TEMPLATES -->
+
+        <record id="product_template_western_blot_analysischarges0" model="product.template">
+            <field name="name">Western Blot Analysis Charges</field>
+            <field eval="1.0" name="list_price"/>
+            <field eval="0.0" name="cost_price"/>
+            <field name="default_uom" ref="product.uom_unit"/>
+            <field name="type">service</field>
+            <field name="category" ref="health_lab.product_category_labservices0"/>
+        </record>
+
+        <record id="product_template_ELISA_analysischarges0" model="product.template">
+            <field name="name">HIV ELISA Analysis Charges</field>
+            <field eval="1.0" name="list_price"/>
+            <field eval="0.0" name="cost_price"/>
+            <field name="default_uom" ref="product.uom_unit"/>
+            <field name="type">service</field>
+            <field name="category" ref="health_lab.product_category_labservices0"/>
+        </record>
+
+
+<!-- PRODUCTS DEFINITION-->
+
+        <record id="product_product_bacilloscopy_ZN_analysischarges0" model="product.product">
+            <field name="template" model="product.template" ref="product_template_bacilloscopy_ZN_analysischarges0"/>
+        </record>
+
+        <record id="product_product_bacilloscopy_FL_analysischarges0" model="product.product">
+            <field name="template" model="product.template" ref="product_template_bacilloscopy_FL_analysischarges0"/>
+        </record>
+
+
+        <record id="product_product_culture_lj_analysischarges0" model="product.product">
+            <field name="template" model="product.template" ref="product_template_culture_lj_analysischarges0"/>
+        </record>
+
+        <record id="product_product_bactec_culture_analysischarges0" model="product.product">
+            <field name="template" model="product.template" ref="product_template_bactec_culture_analysischarges0"/>
+        </record>
+
+        <record id="product_product_xpert_mtb_rif_analysischarges0" model="product.product">
+            <field name="template" model="product.template" ref="product_template_xpert_mtb_rif_analysischarges0"/>
+        </record>
+
+        <record id="product_product_ppd_analysischarges0" model="product.product">
+            <field name="template" model="product.template" ref="product_template_ppd_analysischarges0"/>
+        </record>
+
+
+<!-- HIV -->
+
+        <record id="product_product_western_blot_analysischarges0" model="product.product">
+            <field name="template" model="product.template" ref="product_template_western_blot_analysischarges0"/>
+        </record>
+
+        <record id="product_product_ELISA_analysischarges0" model="product.product">
+            <field name="template" model="product.template" ref="product_template_ELISA_analysischarges0"/>
+        </record>
+
+
+<!-- TEST TYPES DEFINITIONS -->
+
+        <record id="gnuhealth_test_bacilloscopy_ZN_analysis0" model="gnuhealth.lab.test_type">
+            <field eval="&quot;&quot;&quot;BZN&quot;&quot;&quot;" name="code"/>
+            <field name="product_id" ref="product_product_bacilloscopy_ZN_analysischarges0"/>
+            <field eval="&quot;&quot;&quot;ZIEHL NEELSEN BACILLOSCOPY&quot;&quot;&quot;" name="name"/>
+        </record>
+
+
+        <record id="gnuhealth_test_bacilloscopy_FL_analysis0" model="gnuhealth.lab.test_type">
+            <field eval="&quot;&quot;&quot;BFL&quot;&quot;&quot;" name="code"/>
+            <field name="product_id" ref="product_product_bacilloscopy_FL_analysischarges0"/>
+            <field eval="&quot;&quot;&quot;FLUORESCENT BACILLOSCOPY&quot;&quot;&quot;" name="name"/>
+        </record>
+
+
+        <record id="gnuhealth_test_culture_bactec_analysis0" model="gnuhealth.lab.test_type">
+            <field eval="&quot;&quot;&quot;BAC&quot;&quot;&quot;" name="code"/>
+            <field name="product_id" ref="product_product_culture_lj_analysischarges0"/>
+            <field eval="&quot;&quot;&quot;BACTEC CULTURE ANALYSIS&quot;&quot;&quot;" name="name"/>
+        </record>
+
+        <record id="gnuhealth_test_culture_lj_analysis0" model="gnuhealth.lab.test_type">
+            <field eval="&quot;&quot;&quot;LJ&quot;&quot;&quot;" name="code"/>
+            <field name="product_id" ref="product_product_culture_lj_analysischarges0"/>
+            <field eval="&quot;&quot;&quot;LOWENSTEIN-JENSEN CULTURE ANALYSIS&quot;&quot;&quot;" name="name"/>
+        </record>
+
+        <record id="gnuhealth_test_ppd_analysis0" model="gnuhealth.lab.test_type">
+            <field eval="&quot;&quot;&quot;PPD&quot;&quot;&quot;" name="code"/>
+            <field name="product_id" ref="product_product_ppd_analysischarges0"/>
+            <field eval="&quot;&quot;&quot;PPD TEST&quot;&quot;&quot;" name="name"/>
+        </record>
+
+        <record id="gnuhealth_test_xpert_mtb_rif_analysis0" model="gnuhealth.lab.test_type">
+            <field eval="&quot;&quot;&quot;MTBRIF&quot;&quot;&quot;" name="code"/>
+            <field name="product_id" ref="product_product_xpert_mtb_rif_analysischarges0"/>
+            <field eval="&quot;&quot;&quot;Xpert MTB/RIF&quot;&quot;&quot;" name="name"/>
+        </record>
+
+        <record id="gnuhealth_test_western_blot_analysis0" model="gnuhealth.lab.test_type">
+            <field eval="&quot;&quot;&quot;WB&quot;&quot;&quot;" name="code"/>
+            <field name="product_id" ref="product_product_western_blot_analysischarges0"/>
+            <field eval="&quot;&quot;&quot;WESTERN BLOT ASSAY&quot;&quot;&quot;" name="name"/>
+        </record>
+
+        <record id="gnuhealth_test_ELISA_CMIA_analysis0" model="gnuhealth.lab.test_type">
+            <field eval="&quot;&quot;&quot;ELISA-HIV&quot;&quot;&quot;" name="code"/>
+            <field name="product_id" ref="product_product_ELISA_analysischarges0"/>
+            <field eval="&quot;&quot;&quot;HIV ELISA ASSAY - CMIA&quot;&quot;&quot;" name="name"/>
+        </record>
+
+
+<!-- Lab test Units -->
+
+        <record id="gnuhealth_lab_test_units_mm" model="gnuhealth.lab.test.units">
+            <field eval="&quot;&quot;&quot;mm&quot;&quot;&quot;" name="code"/>
+            <field eval="&quot;&quot;&quot;mm&quot;&quot;&quot;" name="name"/>
+        </record>
+
+        <record id="gnuhealth_lab_test_units_ml" model="gnuhealth.lab.test.units">
+            <field eval="&quot;&quot;&quot;ml&quot;&quot;&quot;" name="code"/>
+            <field eval="&quot;&quot;&quot;ml&quot;&quot;&quot;" name="name"/>
+        </record>
+
+        <record id="gnuhealth_lab_test_units_sample_to_cut_off" model="gnuhealth.lab.test.units">
+            <field eval="&quot;&quot;&quot;s/co&quot;&quot;&quot;" name="code"/>
+            <field eval="&quot;&quot;&quot;s/co&quot;&quot;&quot;" name="name"/>
+        </record>
+
+<!-- ANALYTES -->
+
+        <record id="gnuhealth_test_critearea_ppd0" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;Induration Size&quot;&quot;&quot;" name="name"/>
+            <field eval="1" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_ppd_analysis0"/>
+            <field eval="&quot;&quot;&quot;
+Immunocompetent              : &lt; 15 mm
+Immunocompromised        : &lt; 5 mm
+&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="0" name="lower_limit"/>
+            <field eval="15" name="upper_limit"/>
+            <field name="units" ref="gnuhealth_lab_test_units_mm"/>
+        </record>
+
+<!--  ZN BACILLOSCOPY -->
+
+        <record id="gnuhealth_test_critearea_appearance" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;Macroscopic appearance&quot;&quot;&quot;" name="name"/>
+            <field eval="1" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_bacilloscopy_ZN_analysis0"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_volume" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;Volume&quot;&quot;&quot;" name="name"/>
+            <field eval="2" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_bacilloscopy_ZN_analysis0"/>
+            <field name="units" ref="gnuhealth_lab_test_units_mm"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_afb_per_100_fields" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;AFB number per 100 fields&quot;&quot;&quot;" name="name"/>
+            <field eval="3" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_bacilloscopy_ZN_analysis0"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_afb_per_field" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;AFB number per field&quot;&quot;&quot;" name="name"/>
+            <field eval="4" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_bacilloscopy_ZN_analysis0"/>
+        </record>
+
+<!--  FLUORESCENT BACILLOSCOPY -->
+
+        <record id="gnuhealth_test_critearea_appearance1" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;Macroscopic appearance&quot;&quot;&quot;" name="name"/>
+            <field eval="1" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_bacilloscopy_FL_analysis0"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_volume1" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;Volume&quot;&quot;&quot;" name="name"/>
+            <field eval="2" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_bacilloscopy_FL_analysis0"/>
+            <field name="units" ref="gnuhealth_lab_test_units_mm"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_afb_per_100_fields1" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;AFB number per 100 fields&quot;&quot;&quot;" name="name"/>
+            <field eval="3" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_bacilloscopy_FL_analysis0"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_afb_per_field1" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;AFB number per field&quot;&quot;&quot;" name="name"/>
+            <field eval="4" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_bacilloscopy_FL_analysis0"/>
+        </record>
+
+<!-- BACTEC -->
+
+        <record id="gnuhealth_test_critearea_culture" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;Result&quot;&quot;&quot;" name="name"/>
+            <field eval="2" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_culture_bactec_analysis0"/>
+        </record>
+
+<!-- Western Blot Assay -->
+
+        <record id="gnuhealth_test_critearea_p24" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;P24&quot;&quot;&quot;" name="name"/>
+            <field eval="1" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_western_blot_analysis0"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_p31" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;P31&quot;&quot;&quot;" name="name"/>
+            <field eval="2" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_western_blot_analysis0"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_gp41" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;GP41&quot;&quot;&quot;" name="name"/>
+            <field eval="3" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_western_blot_analysis0"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_gp120" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;GP120&quot;&quot;&quot;" name="name"/>
+            <field eval="4" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_western_blot_analysis0"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_gp160" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;GP160&quot;&quot;&quot;" name="name"/>
+            <field eval="5" name="sequence"/>
+            <field name="test_type_id" ref="gnuhealth_test_western_blot_analysis0"/>
+        </record>
+
+<!-- ELISA -->
+
+        <record id="gnuhealth_test_critearea_elisa_CMIA_HIV1_sco" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;HIV-1&quot;&quot;&quot;" name="name"/>
+            <field eval="1" name="sequence"/>
+            <field eval="&quot;&quot;&quot;
+Negative              : &lt; 1 s/co
+Borderline        : 0-4 s/co
+Positive          : &gt; 4 s/co
+&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="0" name="lower_limit"/>
+            <field eval="1" name="upper_limit"/>
+            <field name="units" ref="gnuhealth_lab_test_units_sample_to_cut_off"/>
+            <field name="test_type_id" ref="gnuhealth_test_ELISA_CMIA_analysis0"/>
+        </record>
+
+        <record id="gnuhealth_test_critearea_elisa_CMIA_HIV2_sco" model="gnuhealth.lab.test.critearea">
+            <field eval="&quot;&quot;&quot;HIV-2&quot;&quot;&quot;" name="name"/>
+            <field eval="2" name="sequence"/>
+            <field eval="&quot;&quot;&quot;
+Negative              : &lt; 1 s/co
+Borderline        : &lt; 0-4 s/co
+&quot;&quot;&quot;" name="normal_range"/>
+            <field eval="0" name="lower_limit"/>
+            <field eval="1" name="upper_limit"/>
+            <field name="units" ref="gnuhealth_lab_test_units_sample_to_cut_off"/>
+            <field name="test_type_id" ref="gnuhealth_test_ELISA_CMIA_analysis0"/>
+        </record>
+
+    </data>
+</tryton>

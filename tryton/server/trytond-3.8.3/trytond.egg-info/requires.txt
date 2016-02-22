@@ -1,0 +1,33 @@
+lxml >= 2.0
+relatorio >= 0.2.0
+Genshi
+python-dateutil
+polib
+python-sql >= 0.4
+
+[cdecimal]
+cdecimal
+
+[unoconv]
+unoconv
+
+[PostgreSQL]
+psycopg2 >= 2.0
+
+[WebDAV]
+PyWebDAV >= 0.9.8
+
+[simplejson]
+simplejson
+
+[MySQL]
+MySQL-python
+
+[BCrypt]
+bcrypt
+
+[Levenshtein]
+python-Levenshtein
+
+[graphviz]
+pydot
