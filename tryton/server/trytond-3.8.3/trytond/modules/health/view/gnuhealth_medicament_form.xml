@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<form string="medicaments">
+    <group colspan="4" col="10" string="Main" id="medicament_presentation">
+        <group col="7" string="Product" id="medicament_product">
+            <field name="name"/>
+        </group>
+        <group string="strength" id="medicament_strength">
+            <field name="strength"/>
+            <field name="unit"/>
+        </group>
+        <group col="1" string="Form" id="medicament_form">
+            <field name="form"/>
+        </group>
+
+        <group col="1" string="Route" id="medicament_route">
+            <field name="route"/>
+        </group>
+        
+        <newline/>
+
+        <group colspan="4" id="medicament_category">
+            <label name="active_component"/>
+            <field name="active_component"/>
+            <label name="category"/>
+            <field name="category"/>
+        </group>
+
+    </group>
+    <newline/>
+
+    <notebook>
+        <page string="Main Info" id="medicament_main">
+            <separator string="Indications" colspan="4" id="separator_medication_indication"/>
+            <newline/>
+            <field name="indications" colspan="4"/>
+            <label name="is_vaccine"/>
+            <field name="is_vaccine"/>
+
+        </page>
+        <page string="Presentation" id="medicament_presentation">
+            <field name="presentation"/>
+        </page>
+        <page string="Composition" id="medicament_composition">
+            <field name="composition"/>
+        </page>
+        <page string="Dosage" id="medicament_dosage">
+            <field name="dosage"/>
+            <newline/>
+            <separator string="Overdose" id="medicament_overdosage"/>
+            <newline/>
+            <field name="overdosage"/>
+        </page>
+        <page string="Pregnancy" id="medicament_pregnancy">
+            <label name="pregnancy_warning"/>
+            <field name="pregnancy_warning"/>
+            <label name="pregnancy_category"/>
+            <field name="pregnancy_category"/>
+            <newline/>
+            <separator string="Notes" id="pregnancy_notes" colspan="4"/>
+            <newline/>
+            <field colspan="4" name="pregnancy"/>
+        </page>
+        <page string="Adverse Reactions" id="medicament_adverse_reactions">
+            <field name="adverse_reaction"/>
+        </page>
+        <page string="Storage" id="medicament_storage">
+            <field name="storage"/>
+        </page>
+        <page string="Extra Info" id="medicament_extra_info">
+            <field name="notes"/>
+        </page>
+    </notebook>
+</form>

@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    account = trytond.modules.account
+    

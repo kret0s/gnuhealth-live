@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="97px" height="97px" viewBox="0 0 97 97" style="enable-background:new 0 0 97 97;" xml:space="preserve">
+<g>
+	<radialGradient id="SVGID_1_" cx="46.8706" cy="42.7959" r="47.4862" gradientUnits="userSpaceOnUse">
+		<stop  offset="0" style="stop-color:#FFFFFF"/>
+		<stop  offset="0.3387" style="stop-color:#FDFEFE"/>
+		<stop  offset="0.5554" style="stop-color:#F6FBFB"/>
+		<stop  offset="0.7378" style="stop-color:#EAF5F6"/>
+		<stop  offset="0.9002" style="stop-color:#D9EDEE"/>
+		<stop  offset="1" style="stop-color:#CAE6E7"/>
+	</radialGradient>
+	
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);stroke:#08828B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+		M88.65,63.229c3.336-7.385,3.857-15.324,2.024-22.616C90.348,33.876,79.24,6.664,72.81,2.953c-3.995-2.305-9.15-0.03-11.049,4.174
+		c-0.857,1.899-0.946,3.951-0.397,5.804l-0.095,0.036c2.373,8.089,6.262,9.185,5.178,16.704L41.331,18.328
+		c-0.053,0.027-0.108,0.055-0.161,0.083l-15.626-7.058c-3.507-1.584-7.673-0.011-9.257,3.497l0,0
+		c-1.471,3.258-0.218,7.083,2.778,8.881l-6.105-2.757c-3.507-1.585-7.672-0.011-9.257,3.497l0,0
+		c-1.584,3.508-0.01,7.673,3.497,9.257l3.939,1.779c-3.33-1.059-7.029,0.529-8.5,3.787l0,0c-1.584,3.508-0.01,7.673,3.498,9.258
+		l11.058,4.995c-3.329-1.061-7.028,0.528-8.5,3.786l0,0c-1.584,3.508-0.01,7.674,3.497,9.258l30.76,13.892l0.011,0.005l0.007,0.003
+		l1.726,0.78c0.477,0.215,0.966,0.372,1.458,0.474C62.778,87.365,81.276,79.557,88.65,63.229z"/>
+	
+		<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#08828B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="17.103" y1="53.644" x2="38.009" y2="63.084"/>
+	
+		<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#08828B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="9.734" y1="34.845" x2="39.373" y2="48.231"/>
+	
+		<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#08828B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="15.506" y1="22.063" x2="44.43" y2="35.127"/>
+</g>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="24.3838" y1="68.3975" x2="30.6562" y2="74.6699">
+	<stop  offset="0.1209" style="stop-color:#0A8991"/>
+	<stop  offset="0.4312" style="stop-color:#C1D4D8"/>
+	<stop  offset="0.5982" style="stop-color:#FFFFFF"/>
+</linearGradient>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);stroke:#08828B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+	M33.461,62.073c-4.582,3.718-9.011,7.782-13.239,12.199C14.064,80.706,8.662,87.53,4.024,94.606
+	c8.468,2.574,18.042,0.403,24.579-6.427c3.054-3.191,5.062-6.998,6.035-11.002l0.296,0.094c1.221-5.959,3.773-11.184,7.765-15.353
+	c3.059-3.196,6.776-5.573,11-7.178c-0.632-1.79-1.208-3.566-1.735-5.33C45.603,53.03,39.401,57.255,33.461,62.073z"/>
+<g>
+	<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="55.2832" y1="22.1641" x2="67.0353" y2="34.7667">
+		<stop  offset="0" style="stop-color:#046973"/>
+		<stop  offset="1" style="stop-color:#34A6AE"/>
+	</linearGradient>
+	
+		<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_3_);stroke:#08828B;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+		M93.504,5.296L93.504,5.296c1.389,1.345,2.1,3.134,2.13,4.935l0.001,0.001c0.029,1.8-0.626,3.613-1.971,5.001L48.477,61.901
+		c-1.344,1.389-3.135,2.102-4.937,2.132v-0.002c-1.801,0.028-3.613-0.626-5.001-1.969h-0.001c-1.389-1.346-2.102-3.136-2.131-4.937
+		c-0.029-1.801,0.625-3.613,1.97-5.003L83.565,5.456c1.345-1.389,3.136-2.102,4.936-2.13C90.302,3.296,92.115,3.951,93.504,5.296z"
+		/>
+	
+		<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#FFFFFF;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="49.061" y1="45.428" x2="57.236" y2="48.25"/>
+	
+		<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#FFFFFF;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="53.908" y1="40.538" x2="62.084" y2="43.361"/>
+	
+		<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#FFFFFF;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="58.666" y1="35.649" x2="66.842" y2="38.472"/>
+	
+		<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#FFFFFF;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" x1="63.235" y1="30.76" x2="71.411" y2="33.583"/>
+</g>
+</svg>

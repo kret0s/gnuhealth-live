@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+        <record model="ir.action.report" id="report_newborn_card">
+            <field name="name">Newborn ID</field>
+            <field name="model">gnuhealth.newborn</field>
+            <field name="report_name">newborn.card</field>
+            <field name="report">health_pediatrics/report/newborn_card.odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_card_newborn">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.newborn,-1</field>
+            <field name="action" ref="report_newborn_card"/>
+        </record>
+
+    </data>
+</tryton>

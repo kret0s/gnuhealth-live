@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    currency = trytond.modules.currency
+    

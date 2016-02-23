@@ -1,0 +1,2009 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+<!-- Create the GNU HEALTH icon -->
+        <record model="ir.ui.icon" id="gnuhealth_icon">
+            <field name="name">gnuhealth</field>
+            <field name="path">icons/gnuhealth_icon.svg</field>
+        </record>
+
+<!-- Add other relevant icons -->
+        <record model="ir.ui.icon" id="gnuhealth_disease_icon">
+            <field name="name">gnuhealth-disease</field>
+            <field name="path">icons/face-sick.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_procedure_icon">
+            <field name="name">gnuhealth-procedure</field>
+            <field name="path">icons/hand-scalpel.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_medicament_icon">
+            <field name="name">gnuhealth-medicament</field>
+            <field name="path">icons/medicament.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_appointment_icon">
+            <field name="name">gnuhealth-appointment</field>
+            <field name="path">icons/appointment.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_center_icon">
+            <field name="name">gnuhealth-health-center</field>
+            <field name="path">icons/health-center.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_healthprofessional_icon">
+            <field name="name">gnuhealth-healthprofessional</field>
+            <field name="path">icons/doctor.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_patient_icon">
+            <field name="name">gnuhealth-patient</field>
+            <field name="path">icons/patient.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_prescription_icon">
+            <field name="name">gnuhealth-prescription</field>
+            <field name="path">icons/prescription.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_preferences_icon">
+            <field name="name">gnuhealth-immunizations</field>
+            <field name="path">icons/immunizations.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_report_icon">
+            <field name="name">gnuhealth-report</field>
+            <field name="path">icons/report.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_demography_icon">
+            <field name="name">gnuhealth-demography</field>
+            <field name="path">icons/demography.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_list_icon">
+            <field name="name">gnuhealth-list</field>
+            <field name="path">icons/tryton-list.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_open_icon">
+            <field name="name">gnuhealth-open</field>
+            <field name="path">icons/tryton-open.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_immunizations_icon">
+            <field name="name">gnuhealth-preferences</field>
+            <field name="path">icons/tryton-preferences.svg</field>
+        </record>
+
+        <record model="ir.ui.icon" id="gnuhealth_ok_icon">
+            <field name="name">icon-ok</field>
+            <field name="path">icons/ok.svg</field>
+        </record>
+
+        <record model="ir.ui.icon" id="gnuhealth_cancel_icon">
+            <field name="name">icon-cancel</field>
+            <field name="path">icons/cancel.svg</field>
+        </record>
+
+        <record model="ir.ui.icon" id="gnuhealth_warning_icon">
+            <field name="name">gnuhealth-warning</field>
+            <field name="path">icons/warning.svg</field>
+        </record>
+
+        <record model="ir.ui.icon" id="gnuhealth_stop_icon">
+            <field name="name">gnuhealth-stop</field>
+            <field name="path">icons/stop.svg</field>
+        </record>
+
+<!-- Initial Menu -->
+        <menuitem name="Health" id="gnuhealth_menu" icon="gnuhealth"/>
+        <menuitem name="Demographics" id="gnuhealth_demographics_menu"
+            parent="gnuhealth_menu" sequence="50" icon="gnuhealth-demography"/>
+        <menuitem name="Reporting" id="gnuhealth_reporting_menu"
+            parent="gnuhealth_menu" sequence="998" icon="gnuhealth-report"/>
+
+        <menuitem name="Configuration" id="gnuhealth_conf_menu"
+            parent="gnuhealth_menu" sequence="999" icon="gnuhealth-preferences"/>
+
+<!-- Configuration Menu -->
+        <menuitem name="Conditions" id="gnuhealth_conf_pathology"
+            parent="gnuhealth_conf_menu" sequence="10" icon="gnuhealth-disease"/>
+        <menuitem name="Procedures" id="gnuhealth_conf_procedure"
+            parent="gnuhealth_conf_menu" sequence="20" icon="gnuhealth-procedure"/>
+        <menuitem name="Institutions" id="gnuhealth_conf_institution"
+            parent="gnuhealth_conf_menu" sequence="30" icon="gnuhealth-health-center"/>
+        <menuitem name="Medicaments" id="gnuhealth_conf_medicaments"
+            parent="gnuhealth_conf_menu" sequence="50" icon="gnuhealth-medicament"/>
+        <menuitem name="Misc" id="gnuhealth_conf_misc"
+            parent="gnuhealth_conf_menu" sequence="70" icon="gnuhealth-open"/>
+        <menuitem name="Insurances" id="gnuhealth_conf_insurances"
+            parent="gnuhealth_conf_misc" sequence="80" icon="gnuhealth-open"/>
+
+
+<!-- Person Names -->
+
+        <record model="ir.ui.view" id="gnuhealth_person_name_view">
+            <field name="model">gnuhealth.person_name</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_person_name_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_person_name_tree">
+            <field name="model">gnuhealth.person_name</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_person_name_tree</field>
+        </record>
+
+<!-- Medication Frequencies -->
+
+        <record model="ir.ui.view" id="gnuhealth_dosage_view">
+            <field name="model">gnuhealth.medication.dosage</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_dosage</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_dosage_tree">
+            <field name="model">gnuhealth.medication.dosage</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_dosage_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_dosage">
+            <field name="name">Medication Frequencies</field>
+            <field name="res_model">gnuhealth.medication.dosage</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_dosage_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_dosage_tree"/>
+            <field name="act_window" ref="gnuhealth_action_dosage"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_dosage_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_dosage_view"/>
+            <field name="act_window" ref="gnuhealth_action_dosage"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_dosage" icon="gnuhealth-list"
+            id="gnuhealth_conf_dosage" parent="gnuhealth_conf_medicaments"/>
+
+
+<!-- Immunization Schedule -->
+
+        <record model="ir.ui.view" id="gnuhealth_immunization_schedule_view">
+            <field name="model">gnuhealth.immunization_schedule</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_immunization_schedule</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_immunization_schedule_tree">
+            <field name="model">gnuhealth.immunization_schedule</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_immunization_schedule_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_immunization_schedule">
+            <field name="name">Immunization Schedule</field>
+            <field name="res_model">gnuhealth.immunization_schedule</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_immunization_schedule_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_immunization_schedule_tree"/>
+            <field name="act_window" ref="gnuhealth_action_immunization_schedule"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_immunization_schedule_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_immunization_schedule_view"/>
+            <field name="act_window" ref="gnuhealth_action_immunization_schedule"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_immunization_schedule" id="gnuhealth_conf_immunization_schedule"
+            parent="gnuhealth_conf_menu" icon="gnuhealth-immunizations" sequence="60" />
+
+
+<!-- Immunization Schedule Line-->
+
+        <record model="ir.ui.view" id="gnuhealth_immunization_schedule_line_view">
+            <field name="model">gnuhealth.immunization_schedule_line</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_immunization_schedule_line</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_immunization_schedule_line_tree">
+            <field name="model">gnuhealth.immunization_schedule_line</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_immunization_schedule_line_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_immunization_schedule_line">
+            <field name="name">Schedule Vaccines</field>
+            <field name="res_model">gnuhealth.immunization_schedule_line</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_immunization_schedule_line_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_immunization_schedule_line_tree"/>
+            <field name="act_window" ref="gnuhealth_action_immunization_schedule_line"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_immunization_schedule_line_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_immunization_schedule_line_view"/>
+            <field name="act_window" ref="gnuhealth_action_immunization_schedule_line"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_immunization_schedule_line" 
+            id="gnuhealth_conf_immunization_schedule_line"
+            icon="gnuhealth-list" parent="gnuhealth_conf_immunization_schedule"/>
+
+<!-- Immunization Schedule Dose-->
+
+        <record model="ir.ui.view" id="gnuhealth_immunization_schedule_dose_view">
+            <field name="model">gnuhealth.immunization_schedule_dose</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_immunization_schedule_dose</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_immunization_schedule_dose_tree">
+            <field name="model">gnuhealth.immunization_schedule_dose</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_immunization_schedule_dose_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_immunization_schedule_dose">
+            <field name="name">Vaccine Doses</field>
+            <field name="res_model">gnuhealth.immunization_schedule_dose</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_immunization_schedule_dose_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_immunization_schedule_dose_tree"/>
+            <field name="act_window" ref="gnuhealth_action_immunization_schedule_dose"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_immunization_schedule_dose_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_immunization_schedule_dose_view"/>
+            <field name="act_window" ref="gnuhealth_action_immunization_schedule_dose"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_immunization_schedule_dose" 
+            id="gnuhealth_conf_immunization_schedule_dose"
+            icon="gnuhealth-list" parent="gnuhealth_conf_immunization_schedule"/>
+
+
+
+<!-- Drug dose units -->
+
+        <record model="ir.ui.view" id="gnuhealth_dose_view">
+            <field name="model">gnuhealth.dose.unit</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_dose</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_dose_tree">
+            <field name="model">gnuhealth.dose.unit</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_dose_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_dose">
+            <field name="name">Drug Dose Units</field>
+            <field name="res_model">gnuhealth.dose.unit</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_dose_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_dose_tree"/>
+            <field name="act_window" ref="gnuhealth_action_dose"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_dose_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_dose_view"/>
+            <field name="act_window" ref="gnuhealth_action_dose"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_dose" id="gnuhealth_conf_dose"
+            icon="gnuhealth-list" parent="gnuhealth_conf_medicaments"/>
+
+
+<!-- Drug Administration Routes -->
+
+        <record model="ir.ui.view" id="gnuhealth_drug_route_view">
+            <field name="model">gnuhealth.drug.route</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_drug_route</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_drug_route_tree">
+            <field name="model">gnuhealth.drug.route</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_drug_route_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_drug_route">
+            <field name="name">Drug Administration Routes</field>
+            <field name="res_model">gnuhealth.drug.route</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_drug_route_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_drug_route_tree"/>
+            <field name="act_window" ref="gnuhealth_action_drug_route"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_drug_route_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_drug_route_view"/>
+            <field name="act_window" ref="gnuhealth_action_drug_route"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_drug_route"
+            id="gnuhealth_conf_drug_route" icon="gnuhealth-list"
+            parent="gnuhealth_conf_medicaments"/>
+
+<!-- Drug Forms -->
+
+        <record model="ir.ui.view" id="gnuhealth_drug_form_view">
+            <field name="model">gnuhealth.drug.form</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_drug_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_drug_form_tree">
+            <field name="model">gnuhealth.drug.form</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_drug_route_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_drug_form">
+                <field name="name">Drug Forms</field>
+                <field name="res_model">gnuhealth.drug.form</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_drug_form_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_drug_form_tree"/>
+            <field name="act_window" ref="gnuhealth_action_drug_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_drug_form_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_drug_form_view"/>
+            <field name="act_window" ref="gnuhealth_action_drug_form"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_drug_form" icon="gnuhealth-list"
+            id="gnuhealth_conf_drug_form" parent="gnuhealth_conf_medicaments"/>
+
+
+<!-- Occupations -->
+
+        <record model="ir.ui.view" id="gnuhealth_occupation_view">
+            <field name="model">gnuhealth.occupation</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_occupation</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_occupation_tree">
+            <field name="model">gnuhealth.occupation</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_occupation_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_occupation">
+            <field name="name">Occupations</field>
+            <field name="res_model">gnuhealth.occupation</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_occupation_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_occupation_tree"/>
+            <field name="act_window" ref="gnuhealth_action_occupation"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_occupation_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_occupation_view"/>
+            <field name="act_window" ref="gnuhealth_action_occupation"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_occupation" icon="gnuhealth-list"
+            id="gnuhealth_conf_occupation" parent="gnuhealth_conf_misc"/>
+
+
+<!-- Ethnicities -->
+
+        <record model="ir.ui.view" id="gnuhealth_ethnicity_view">
+            <field name="model">gnuhealth.ethnicity</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_ethnicity</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_ethnicity_tree">
+            <field name="model">gnuhealth.ethnicity</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_ethnicity_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_ethnicity">
+            <field name="name">Ethnicities</field>
+            <field name="res_model">gnuhealth.ethnicity</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_ethnicity_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_ethnicity_tree"/>
+            <field name="act_window" ref="gnuhealth_action_ethnicity"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_ethnicity_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_ethnicity_view"/>
+            <field name="act_window" ref="gnuhealth_action_ethnicity"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_ethnicity" icon="gnuhealth-list"
+            id="gnuhealth_conf_ethnicity" parent="gnuhealth_conf_misc"/>
+
+
+<!-- Medical Specialties -->
+
+        <record model="ir.ui.view" id="gnuhealth_specialty_view">
+            <field name="model">gnuhealth.specialty</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_specialty</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_specialty_tree">
+            <field name="model">gnuhealth.specialty</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_specialty_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_specialty">
+            <field name="name">Medical Specialties</field>
+            <field name="res_model">gnuhealth.specialty</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_specialty_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_specialty_tree"/>
+            <field name="act_window" ref="gnuhealth_action_specialty"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_specialty_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_specialty_view"/>
+            <field name="act_window" ref="gnuhealth_action_specialty"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_specialty" icon="gnuhealth-list"
+            id="gnuhealth_conf_specialty" parent="gnuhealth_conf_misc"/>
+
+
+<!-- Health Professional -->
+
+        <record model="ir.ui.view" id="gnuhealth_healthprofessional_view">
+            <field name="model">gnuhealth.healthprofessional</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_healthprofessional</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_healthprofessional_tree">
+            <field name="model">gnuhealth.healthprofessional</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_healthprofessional_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_healthprofessional">
+            <field name="name">Health Professionals</field>
+            <field name="res_model">gnuhealth.healthprofessional</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_healthprofessional_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_healthprofessional_tree"/>
+            <field name="act_window" ref="gnuhealth_action_healthprofessional"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_healthprofessional_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_healthprofessional_view"/>
+            <field name="act_window" ref="gnuhealth_action_healthprofessional"/>
+        </record>
+
+        <menuitem name="Health Professionals" id="gnuhealth_conf_healthprofessionals"
+            parent="gnuhealth_menu" sequence="40" icon="gnuhealth-healthprofessional"
+            action="gnuhealth_action_healthprofessional" />
+
+
+
+
+<!-- Health Professional Specialties -->
+
+        <record model="ir.ui.view" id="gnuhealth_hp_specialty_view">
+            <field name="model">gnuhealth.hp_specialty</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_hp_specialty</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_hp_specialty_tree">
+            <field name="model">gnuhealth.hp_specialty</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_hp_specialty_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_hp_specialty">
+            <field name="name">Specialties by health professionals</field>
+            <field name="res_model">gnuhealth.hp_specialty</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_hp_specialty_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_hp_specialty_tree"/>
+            <field name="act_window" ref="gnuhealth_action_hp_specialty"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_hp_specialty" id="gnuhealth_edit_hp_specialty"
+            icon="gnuhealth-list" parent="gnuhealth_reporting_menu" sequence="20"/>
+
+
+<!-- Family -->
+
+        <record model="ir.ui.view" id="gnuhealth_family_view">
+            <field name="model">gnuhealth.family</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_family</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_family_tree">
+            <field name="model">gnuhealth.family</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_family_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_family">
+            <field name="name">Families</field>
+            <field name="res_model">gnuhealth.family</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_family_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_family_tree"/>
+            <field name="act_window" ref="gnuhealth_action_family"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_family_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_family_view"/>
+            <field name="act_window" ref="gnuhealth_action_family"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_family" id="gnuhealth_edit_family"
+            icon="gnuhealth-list" parent="gnuhealth_demographics_menu" sequence="20"/>
+
+
+<!-- Family Members -->
+
+        <record model="ir.ui.view" id="gnuhealth_family_member_view">
+            <field name="model">gnuhealth.family_member</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_family_member</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_family_member_tree">
+            <field name="model">gnuhealth.family_member</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_family_member_tree</field>
+        </record>
+
+<!-- Make the Family Member list read only, to enter a new one will be done from the family model -->
+
+        <record model="ir.action.act_window" id="gnuhealth_action_family_member">
+            <field name="name">Family Members</field>
+            <field name="res_model">gnuhealth.family_member</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_family_member_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_family_member_tree"/>
+            <field name="act_window" ref="gnuhealth_action_family_member"/>
+        </record>
+
+
+        <menuitem action="gnuhealth_action_family_member"
+            id="gnuhealth_edit_family_member" parent="gnuhealth_demographics_menu"
+            icon="gnuhealth-list" sequence="40"/>
+
+
+<!-- Domiciliary Unit -->
+
+        <record model="ir.ui.view" id="gnuhealth_du_view">
+            <field name="model">gnuhealth.du</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_du</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_du_tree">
+            <field name="model">gnuhealth.du</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_du_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_du">
+            <field name="name">Domiciliary Units</field>
+            <field name="res_model">gnuhealth.du</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_du_list_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_du_tree"/>
+            <field name="act_window" ref="gnuhealth_action_du"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_du_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_du_view"/>
+            <field name="act_window" ref="gnuhealth_action_du"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_du"
+            id="gnuhealth_edit_du" parent="gnuhealth_demographics_menu"
+            icon="gnuhealth-list" sequence="10"/>
+
+
+
+
+<!-- Operational Areas -->
+
+        <record model="ir.ui.view" id="gnuhealth_operational_area_view">
+            <field name="model">gnuhealth.operational_area</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_operational_area</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_operational_area_tree">
+            <field name="model">gnuhealth.operational_area</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_operational_area_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_operational_area">
+            <field name="name">Operational Areas</field>
+            <field name="res_model">gnuhealth.operational_area</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_operational_area_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_operational_area_tree"/>
+            <field name="act_window" ref="gnuhealth_action_operational_area"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_operational_area_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_operational_area_view"/>
+            <field name="act_window" ref="gnuhealth_action_operational_area"/>
+        </record>
+
+        <menuitem name="Operational Areas" id="gnuhealth_operational_areas"
+            parent="gnuhealth_demographics_menu" sequence="100" icon="gnuhealth-open"/>
+
+        <menuitem action="gnuhealth_action_operational_area"
+            id="gnuhealth_conf_edit_operational_area" icon="gnuhealth-list"
+            parent="gnuhealth_operational_areas" sequence="1"/>
+
+
+<!-- Operational Sector -->
+
+        <record model="ir.ui.view" id="gnuhealth_operational_sector_view">
+            <field name="model">gnuhealth.operational_sector</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_operational_sector</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="gnuhealth_operational_sector_tree">
+            <field name="model">gnuhealth.operational_sector</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_operational_sector_tree</field>
+        </record>
+
+
+        <record model="ir.action.act_window" id="gnuhealth_action_operational_sector">
+            <field name="name">Operational Sectors</field>
+            <field name="res_model">gnuhealth.operational_sector</field>
+        </record>
+
+
+        <record model="ir.action.act_window.view" id="act_operational_sector_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_operational_sector_tree"/>
+            <field name="act_window" ref="gnuhealth_action_operational_sector"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_operational_sector_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_operational_sector_view"/>
+            <field name="act_window" ref="gnuhealth_action_operational_sector"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_operational_sector"
+            id="gnuhealth_conf_edit_operational_sector" icon="gnuhealth-list"
+            parent="gnuhealth_operational_areas" sequence="2"/>
+
+
+<!-- Medicaments -->
+
+        <record model="ir.ui.view" id="gnuhealth_medicament_form">
+            <field name="model">gnuhealth.medicament</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_medicament_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_medicament_tree">
+            <field name="model">gnuhealth.medicament</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_medicament_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_view_medicament">
+            <field name="name">Medicaments</field>
+            <field name="res_model">gnuhealth.medicament</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_medicament_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_medicament_tree"/>
+            <field name="act_window" ref="gnuhealth_action_view_medicament"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_medicament_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_medicament_form"/>
+            <field name="act_window" ref="gnuhealth_action_view_medicament"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_view_medicament"
+            id="gnuhealth_edit_medicament" parent="gnuhealth_conf_medicaments"
+            sequence="2" icon="gnuhealth-list"/>
+
+
+<!-- Medicament Categories -->
+
+        <record model="ir.action.act_window" id="act_medicament_by_category">
+            <field name="name">Medicament by Category</field>
+            <field name="res_model">gnuhealth.medicament</field>
+
+            <field name="context"
+                eval="{'categories': [Eval('active_id')]}" pyson="1"/>
+ 
+            <field name="domain" 
+                eval="[('category', 'child_of', [Eval('active_id')], 'parent')]" 
+                pyson="1"/>
+                
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_medicament_by_category_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_medicament_tree"/>
+            <field name="act_window" ref="act_medicament_by_category"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_medicament_by_category_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_medicament_form"/>
+            <field name="act_window" ref="act_medicament_by_category"/>
+        </record>
+
+        <record model="ir.action.keyword" id="act_medicament_by_category_keyword1">
+            <field name="keyword">tree_open</field>
+            <field name="model">gnuhealth.medicament.category,-1</field>
+            <field name="action" ref="act_medicament_by_category"/>
+        </record>
+
+       <record model="ir.ui.view" id="gnuhealth_medicament_category_form">
+            <field name="model">gnuhealth.medicament.category</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_medicament_category_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_medicament_category_list">
+            <field name="model">gnuhealth.medicament.category</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_medicament_category_list</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_medicament_category_tree">
+            <field name="model">gnuhealth.medicament.category</field>
+            <field name="type">tree</field>
+            <field name="field_childs">childs</field>
+            <field name="name">gnuhealth_medicament_category_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_medicament_category_tree">
+            <field name="name">Medicament categories</field>
+            <field name="res_model">gnuhealth.medicament.category</field>
+            <field name="domain" eval="[('parent', '=', None)]" pyson="1"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_medicament_category_tree_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_medicament_category_tree"/>
+            <field name="act_window" ref="action_gnuhealth_medicament_category_tree"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_medicament_category_tree_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_medicament_category_form"/>
+            <field name="act_window" ref="action_gnuhealth_medicament_category_tree"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_medicament_category_tree"
+            id="gnuhealth_conf_medicament_category" icon="gnuhealth-list"
+            parent="gnuhealth_conf_medicaments"/>
+
+
+<!-- Pathology Groups -->
+
+        <record model="ir.ui.view" id="gnuhealth_pathology_group_form">
+            <field name="model">gnuhealth.pathology.group</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_pathology_group_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_pathology_group_tree">
+            <field name="model">gnuhealth.pathology.group</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_pathology_group_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_pathology_group">
+            <field name="name">Pathology Groups</field>
+            <field name="res_model">gnuhealth.pathology.group</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_pathology_group_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_pathology_group_tree"/>
+            <field name="act_window" ref="gnuhealth_action_pathology_group"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_pathology_group_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_pathology_group_form"/>
+            <field name="act_window" ref="gnuhealth_action_pathology_group"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_pathology_group"
+            id="gnuhealth_conf_pathology_group" icon="gnuhealth-list"
+            parent="gnuhealth_conf_pathology"/>
+
+
+
+
+<!-- Disease Group Member-->
+
+        <record model="ir.ui.view" id="gnuhealth_disease_group_members_view">
+            <field name="model">gnuhealth.disease_group.members</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_disease_group_members</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_disease_group_members_tree">
+            <field name="model">gnuhealth.disease_group.members</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_disease_group_members_tree</field>
+        </record>
+
+
+<!-- Disease -->
+
+        <record model="ir.ui.view" id="gnuhealth_pathology_view">
+            <field name="model">gnuhealth.pathology</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_pathology</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_pathology_tree">
+            <field name="model">gnuhealth.pathology</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_pathology_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_form_pathology">
+            <field name="name">Conditions</field>
+            <field name="res_model">gnuhealth.pathology</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_pathology_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_pathology_tree"/>
+            <field name="act_window" ref="gnuhealth_action_form_pathology"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_pathology_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_pathology_view"/>
+            <field name="act_window" ref="gnuhealth_action_form_pathology"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_form_pathology"
+            id="gnuhealth_conf_pathology_pathology" icon="gnuhealth-list"
+            parent="gnuhealth_conf_pathology" sequence="1"/>
+
+
+<!-- Disease Categories -->
+
+        <menuitem name="Categories" id="gnuhealth_conf_pathology_categories"
+            parent="gnuhealth_conf_pathology" icon="gnuhealth-open"/>
+
+        <record model="ir.ui.view" id="gnuhealth_pathology_category_form">
+            <field name="model">gnuhealth.pathology.category</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_pathology_category_form</field>
+        </record>
+        <record model="ir.ui.view" id="gnuhealth_pathology_category_list">
+            <field name="model">gnuhealth.pathology.category</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_pathology_category_list</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_pathology_category_tree">
+            <field name="model">gnuhealth.pathology.category</field>
+            <field name="type">tree</field>
+            <field name="field_childs">childs</field>
+            <field name="name">gnuhealth_pathology_category_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_pathology_category_tree">
+            <field name="name">Disease categories</field>
+            <field name="res_model">gnuhealth.pathology.category</field>
+            <field name="domain" eval="[('parent', '=', None)]" pyson="1"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_pathology_category_tree_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_pathology_category_tree"/>
+            <field name="act_window" ref="action_gnuhealth_pathology_category_tree"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_pathology_category_tree_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_pathology_category_form"/>
+            <field name="act_window" ref="action_gnuhealth_pathology_category_tree"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_pathology_category_tree"
+            id="gnuhealth_conf_pathology_category" icon="gnuhealth-list"
+            parent="gnuhealth_conf_pathology_categories"/>
+
+<!--
+        <menuitem action="action_gnuhealth_pathology_category_tree"
+            id="gnuhealth_pathology_cat_struc"
+            parent="gnuhealth_conf_pathology_categories"/>
+-->
+
+
+<!-- Insurances -->
+
+        <record model="ir.ui.view" id="gnuhealth_insurance_view_form">
+            <field name="model">gnuhealth.insurance</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_insurance_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_insurance_view_tree">
+            <field name="model">gnuhealth.insurance</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_insurance_tree</field>
+        </record>
+
+       <record model="ir.action.act_window" id="gnuhealth_action_insurance">
+            <field name="name">Insurances</field>
+            <field name="res_model">gnuhealth.insurance</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_insurance_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_insurance_view_tree"/>
+            <field name="act_window" ref="gnuhealth_action_insurance"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_insurance_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_insurance_view_form"/>
+            <field name="act_window" ref="gnuhealth_action_insurance"/>
+        </record>
+
+        <menuitem name="Insurances" action="gnuhealth_action_insurance"
+            parent="gnuhealth_conf_insurances" sequence="1"
+            id="gnuhealth_conf_edit_insurance" icon="gnuhealth-list"/>
+
+
+<!-- Insurances plans -->
+
+        <record model="ir.ui.view" id="gnuhealth_insurance_plan_view">
+            <field name="model">gnuhealth.insurance.plan</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_insurance_plan</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_insurance_plan_tree">
+            <field name="model">gnuhealth.insurance.plan</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_insurance_plan_tree</field>
+        </record>
+
+
+ <!-- Insurances companies -->
+
+        <record model="ir.action.act_window" id="gnuhealth_action_insurance_company">
+             <field name="name">Insurance Company</field>
+             <field name="res_model">party.party</field>
+             <field name="domain" eval="[('is_insurance_company', '=', True)]" pyson="1"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_insurance_company_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_insurance_view_tree"/>
+            <field name="act_window" ref="gnuhealth_action_insurance"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_insurance_company_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_insurance_view_form"/>
+            <field name="act_window" ref="gnuhealth_action_insurance"/>
+        </record>
+
+        <menuitem action="gnuhealth_action_insurance_company"
+            id="gnuhealth_conf_edit_insurance_company" icon="gnuhealth-list"
+            parent="gnuhealth_conf_insurances" sequence="2"/>
+
+
+<!-- PERSON ALTERNATIVE IDs -->
+
+        <record model="ir.ui.view" id="gnuhealth_alternative_identification_form">
+            <field name="model">gnuhealth.person_alternative_identification</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_alternative_identification_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_alternative_identification_tree">
+            <field name="model">gnuhealth.person_alternative_identification</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_alternative_identification_tree</field>
+        </record>
+
+<!-- PARTY -->
+
+        <record model="ir.ui.view" id="view_party_form">
+            <field name="model">party.party</field>
+            <field name="inherit" ref="party.party_view_form"/>
+            <field name="type">form</field>
+            <field name="name">party_form</field>
+        </record>
+        
+        <!-- Add "People" menu at party level -->
+    
+        <record model="ir.action.act_window" id="act_people_form">
+            <field name="name">People</field>
+            <field name="res_model">party.party</field>
+            <field name="domain" eval="[('is_person', '=', True)]" pyson="1"/>
+        </record>
+
+        <menuitem parent="party.menu_party_form" sequence="1"
+            icon="gnuhealth-demography" 
+            action="act_people_form" id="menu_people"/>
+
+
+<!-- Add the Lastname and SSN (ref) field to the tree view of the party -->
+
+        <record model="ir.ui.view" id="party_view_tree">
+            <field name="model">party.party</field>
+            <field name="inherit" ref="party.party_view_tree"/>
+            <field name="name">party_tree</field>
+        </record>
+
+
+<!-- PARTY CONTACT INFO - RELATIVES -->
+
+        <record model="ir.ui.view" id="view_party_address_form">
+            <field name="model">party.address</field>
+            <field name="inherit" ref="party.address_view_form"/>
+            <field name="type">form</field>
+            <field name="name">party_address_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="address_view_tree">
+            <field name="model">party.address</field>
+            <field name="inherit" ref="party.address_view_tree"/>
+            <field name="name">address_tree</field>
+        </record>
+
+
+<!-- BIRTH CERTIFICATE -->
+
+        <record model="ir.ui.view" id="gnuhealth_birth_cert_form">
+            <field name="model">gnuhealth.birth_certificate</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_birth_certificate_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_birth_cert_tree">
+            <field name="model">gnuhealth.birth_certificate</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_birth_certificate_tree</field>
+        </record>
+
+        <!-- birth Certificate menu entry in demographics -->
+    
+        <record model="ir.action.act_window" id="act_birth_cert_form">
+            <field name="name">Birth certificates</field>
+            <field name="res_model">gnuhealth.birth_certificate</field>
+        </record>
+
+        <menuitem parent="gnuhealth_demographics_menu" 
+            action="act_birth_cert_form" icon="gnuhealth-list" id="menu_birth_cert"/>
+
+        <!-- Shortcut to the birth Certificate from the Party -->
+
+        <record model="ir.action.act_window" id="act_birth_cert_form1">
+            <field name="name">Birth Certificate</field>
+            <field name="res_model">gnuhealth.birth_certificate</field>
+            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+
+        <record model="ir.action.keyword" id="act_open_birth_cert_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">party.party,-1</field>
+            <field name="action" ref="act_birth_cert_form1"/>
+        </record>
+
+<!-- DEATH CERTIFICATE -->
+
+        <record model="ir.ui.view" id="gnuhealth_death_cert_form">
+            <field name="model">gnuhealth.death_certificate</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_death_certificate_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_death_cert_tree">
+            <field name="model">gnuhealth.death_certificate</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_death_certificate_tree</field>
+        </record>
+
+        <!-- Death Certificate menu entry in demographics -->
+    
+        <record model="ir.action.act_window" id="act_death_cert_form">
+            <field name="name">Death certificates</field>
+            <field name="res_model">gnuhealth.death_certificate</field>
+        </record>
+
+        <menuitem parent="gnuhealth_demographics_menu" 
+            action="act_death_cert_form" icon="gnuhealth-list" id="menu_death_cert"/>
+
+        <!-- Shortcut to the Death Certificate from the Party -->
+
+        <record model="ir.action.act_window" id="act_death_cert_form1">
+            <field name="name">Death Certificate</field>
+            <field name="res_model">gnuhealth.death_certificate</field>
+            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+
+        <record model="ir.action.keyword" id="act_open_death_cert_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">party.party,-1</field>
+            <field name="action" ref="act_death_cert_form1"/>
+        </record>
+
+
+<!-- DEATH CERTIFICATE .- UNDERLYING CONDITIONS -->
+
+        <record model="ir.ui.view" id="gnuhealth_underlying_condition_form">
+            <field name="model">gnuhealth.death_underlying_condition</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_death_underlying_condition_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_underlying_condition_tree">
+            <field name="model">gnuhealth.death_underlying_condition</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_death_underlying_condition_tree</field>
+        </record>
+
+<!-- PRODUCT -->
+
+        <record model="ir.ui.view" id="view_gnuhealth_product_form">
+            <field name="model">product.product</field>
+            <field name="inherit" ref="product.product_view_form"/>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_product_form</field>
+        </record>
+        <record model="ir.ui.view" id="view_gnuhealth_product_tree">
+            <field name="model">product.product</field>
+            <field name="inherit" ref="product.product_view_tree"/>
+            <field name="name">gnuhealth_product_tree</field>
+        </record>
+
+
+<!-- MEDICAL PROCEDURES -->
+
+        <record model="ir.ui.view" id="gnuhealth_procedure_view_form">
+            <field name="model">gnuhealth.procedure</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_procedure_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_procedure_tree">
+            <field name="model">gnuhealth.procedure</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_procedure_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_procedure_view">
+            <field name="name">Procedures</field>
+            <field name="res_model">gnuhealth.procedure</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_procedure_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_procedure_tree"/>
+            <field name="act_window" ref="action_gnuhealth_procedure_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_procedure_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_procedure_view_form"/>
+            <field name="act_window" ref="action_gnuhealth_procedure_view"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_procedure_view"
+            id="menu_gnuhealth_procedure_list" icon="gnuhealth-list"
+            parent="gnuhealth_conf_procedure"/>
+
+
+<!-- PATIENT MEDICATION -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_medication_form">
+            <field name="model">gnuhealth.patient.medication</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_medication_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_patient_medication_tree">
+            <field name="model">gnuhealth.patient.medication</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_patient_medication_tree</field>
+        </record>
+
+
+<!-- PATIENT APPOINTMENTS -->
+
+        <record model="ir.ui.view" id="gnuhealth_appointment_form">
+            <field name="model">gnuhealth.appointment</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_appointment_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_appointment_tree">
+            <field name="model">gnuhealth.appointment</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_appointment_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_appointment_view">
+            <field name="name">Appointments</field>
+            <field name="res_model">gnuhealth.appointment</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_appointment_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_appointment_tree"/>
+            <field name="act_window" ref="action_gnuhealth_appointment_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_appointment_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_appointment_form"/>
+            <field name="act_window" ref="action_gnuhealth_appointment_view"/>
+        </record>
+
+        <record model="ir.action.act_window.domain" id="act_gnuhealth_appointment_domain_confirmed">
+            <field name="name">Confirmed</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain" eval="[('state', '=', 'confirmed')]" pyson="1"/>
+            <field name="act_window" ref="action_gnuhealth_appointment_view"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gnuhealth_appointment_domain_checkedin">
+            <field name="name">Checked in</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain" eval="[('state', '=', 'checked_in')]" pyson="1"/>
+            <field name="act_window" ref="action_gnuhealth_appointment_view"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gnuhealth_appointment_domain_noshow">
+            <field name="name">No Shows</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain" eval="[('state', '=', 'no_show')]" pyson="1"/>
+            <field name="act_window" ref="action_gnuhealth_appointment_view"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gnuhealth_appointment_domain_free">
+            <field name="name">Free</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain" eval="[('state', '=', 'free')]" pyson="1"/>
+            <field name="act_window" ref="action_gnuhealth_appointment_view"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gnuhealth_appointment_domain_all">
+            <field name="name">All</field>
+            <field name="sequence" eval="9999"/>
+            <field name="domain"></field>
+            <field name="act_window" ref="action_gnuhealth_appointment_view"/>
+        </record>
+
+        <menuitem name="Appointments" action="action_gnuhealth_appointment_view" 
+            id="gnuhealth_appointment_menu"
+            parent="gnuhealth_menu" sequence="20" icon="gnuhealth-appointment"/>
+
+<!-- Shortcut to the Appointments from the Patient -->
+
+        <record model="ir.action.act_window" id="act_appointment_form1">
+            <field name="name">Appointments</field>
+            <field name="res_model">gnuhealth.appointment</field>
+            <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_appointment_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="act_appointment_form1"/>
+        </record>
+
+<!-- Appointments Report -->
+        <record model="ir.ui.view" id="appointments_report_view_tree">
+            <field name="model">gnuhealth.appointment.report</field>
+            <field name="type">tree</field>
+            <field name="name">appointments_report_tree</field>
+        </record>
+        <record model="ir.action.act_window"
+            id="act_appointments_report_view_tree">
+            <field name="name">Appointments Report</field>
+            <field name="res_model">gnuhealth.appointment.report</field>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_appointments_report_view_tree_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="appointments_report_view_tree"/>
+            <field name="act_window" ref="act_appointments_report_view_tree"/>
+        </record>
+
+        <record model="ir.ui.view" id="appointments_report_open_start_view_form">
+            <field name="model">gnuhealth.appointment.report.open.start</field>
+            <field name="type">form</field>
+            <field name="name">appointments_report_open_start_form</field>
+        </record>
+        <record model="ir.action.wizard" id="appointments_report_open">
+            <field name="name">Appointments Report</field>
+            <field name="wiz_name">gnuhealth.appointment.report.open</field>
+        </record>
+
+<!-- Menu entry for appointments -->
+
+        <menuitem parent="gnuhealth_reporting_menu"
+            action="appointments_report_open"
+            id="menu_appointments_report_view_tree" sequence="20"
+            icon="gnuhealth-list"/>
+
+        <record model="ir.action.act_window" id="act_appointment_report_patient">
+            <field name="name">Patient</field>
+            <field name="res_model">gnuhealth.patient</field>
+            <field name="context" eval="{'appointments': [Eval('active_id')]}" pyson="1"/>
+            <field name="domain" eval="[('appointments', 'in', [Eval('active_id')])]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_appointment_report_patient_keyword1">
+            <field name="keyword">tree_open</field>
+            <field name="model">gnuhealth.appointment.report,-1</field>
+            <field name="action" ref="act_appointment_report_patient"/>
+        </record>
+
+<!-- Shortcut to the Patient Evaluations -->
+        <record model="ir.action.act_window" id="act_evaluation_form1">
+            <field name="name">Evaluations</field>
+            <field name="res_model">gnuhealth.patient.evaluation</field>
+            <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_evaluation_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="act_evaluation_form1"/>
+        </record>
+
+<!-- Shortcut to the Prescription Orders -->
+        <record model="ir.action.act_window" id="act_prescription_form1">
+            <field name="name">Prescriptions</field>
+            <field name="res_model">gnuhealth.prescription.order</field>
+            <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_prescription_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="act_prescription_form1"/>
+        </record>
+
+
+<!-- PATIENT VACCINATIONS -->
+
+        <record model="ir.ui.view" id="gnuhealth_vaccination_form">
+            <field name="model">gnuhealth.vaccination</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_vaccination_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_vaccination_tree">
+            <field name="model">gnuhealth.vaccination</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_vaccination_tree</field>
+        </record>
+
+
+<!-- Shortcut to the Patient vaccinations from the patient view -->
+        <record model="ir.action.act_window" id="act_vaccination_form1">
+            <field name="name">Vaccinations</field>
+            <field name="res_model">gnuhealth.vaccination</field>
+            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_vaccination_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="act_vaccination_form1"/>
+        </record>
+
+<!-- PATIENT DIRECTIONS - PROCEDURES / ACTIONS TO TAKE -->
+
+        <record model="ir.ui.view" id="gnuhealth_directions_form">
+            <field name="model">gnuhealth.directions</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_directions_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_directions_tree">
+            <field name="model">gnuhealth.directions</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_directions_tree</field>
+        </record>
+
+
+
+
+
+<!-- PATIENT EVALUATION .- SECONDARY CONDITIONS -->
+
+        <record model="ir.ui.view" id="gnuhealth_secondary_condition_form">
+            <field name="model">gnuhealth.secondary_condition</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_secondary_condition_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_secondary_condition_tree">
+            <field name="model">gnuhealth.secondary_condition</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_secondary_condition_tree</field>
+        </record>
+
+
+<!-- PATIENT EVALUATION OTHER DIAGNOSTIC HYPOTHESIS -->
+
+        <record model="ir.ui.view" id="gnuhealth_diagnostic_hypothesis_form">
+            <field name="model">gnuhealth.diagnostic_hypothesis</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_secondary_condition_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_diagnostic_hypothesis_tree">
+            <field name="model">gnuhealth.diagnostic_hypothesis</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_diagnostic_hypothesis_tree</field>
+        </record>
+
+<!-- PATIENT EVALUATION CLINICAL FINDINGS - SIGNS AND SYMPTOMS -->
+
+        <record model="ir.ui.view" id="gnuhealth_signs_and_symptoms_form">
+            <field name="model">gnuhealth.signs_and_symptoms</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_signs_and_symptoms_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_signs_and_symptoms_tree">
+            <field name="model">gnuhealth.signs_and_symptoms</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_signs_and_symptoms_tree</field>
+        </record>
+
+<!-- PATIENT ECGS -->
+        <record model="ir.ui.view" id="gnuhealth_patient_ecg_form">
+            <field name="model">gnuhealth.patient.ecg</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_ecg_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_patient_ecg_tree">
+            <field name="model">gnuhealth.patient.ecg</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_patient_ecg_tree</field>
+        </record>
+
+<!-- Shortcut to the ECG from the Patient -->
+
+        <record model="ir.action.act_window" id="act_ecg_view">
+            <field name="name">ECGs</field>
+            <field name="res_model">gnuhealth.patient.ecg</field>
+            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_ecg_keyword">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="act_ecg_view"/>
+        </record>
+
+<!-- PATIENT CONDITIONS -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_diseases_view_form">
+            <field name="model">gnuhealth.patient.disease</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_diseases_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_patient_diseases_tree">
+            <field name="model">gnuhealth.patient.disease</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_patient_diseases_tree</field>
+        </record>
+
+<!-- Shortcut to the Patient conditions from the patient view -->
+        <record model="ir.action.act_window" id="act_condition_form1">
+            <field name="name">Conditions</field>
+            <field name="res_model">gnuhealth.patient.disease</field>
+            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_condition_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="act_condition_form1"/>
+        </record>
+
+
+<!-- PATIENT DATA -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_view_form">
+            <field name="model">gnuhealth.patient</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_patient_tree">
+            <field name="model">gnuhealth.patient</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_patient_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_patient_view">
+            <field name="name">Patients</field>
+            <field name="res_model">gnuhealth.patient</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_patient_tree"/>
+            <field name="act_window" ref="action_gnuhealth_patient_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_view_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_patient_view_form"/>
+            <field name="act_window" ref="action_gnuhealth_patient_view"/>
+        </record>
+
+        <menuitem name="Patients" id="gnuhealth_patients_menu"
+            action="action_gnuhealth_patient_view" 
+            parent="gnuhealth_menu" sequence="10" icon="gnuhealth-patient"/>
+
+
+<!-- PATIENT EVALUATION -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_evaluation_view">
+            <field name="model">gnuhealth.patient.evaluation</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_evaluation</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_patient_evaluation_tree">
+            <field name="model">gnuhealth.patient.evaluation</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_patient_evaluation_tree</field>
+        </record>
+
+<!-- READ-ONLY TREE VIEW We create the patient evaluation from the patient form -->
+
+        <record model="ir.action.act_window" id="action_gnuhealth_patient_evaluation_view">
+            <field name="name">Patient Evaluations [readonly]</field>
+            <field name="res_model">gnuhealth.patient.evaluation</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_patient_evaluation_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_patient_evaluation_tree"/>
+            <field name="act_window" ref="action_gnuhealth_patient_evaluation_view"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_patient_evaluation_view"
+            id="menu_gnuhealth_patient_evaluation_list" icon="gnuhealth-list"
+            parent="gnuhealth_reporting_menu"/>
+
+
+<!-- Prescription line -->
+
+        <record model="ir.ui.view" id="gnuhealth_prescription_line_view">
+            <field name="model">gnuhealth.prescription.line</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_prescription_line</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_prescription_line_tree">
+            <field name="model">gnuhealth.prescription.line</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_prescription_line_tree</field>
+        </record>
+
+
+<!-- Prescription Order-->
+
+        <record model="ir.ui.view" id="gnuhealth_prescription_view">
+            <field name="model">gnuhealth.prescription.order</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_prescription</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_prescription_tree">
+            <field name="model">gnuhealth.prescription.order</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_prescription_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_prescription_view">
+            <field name="name">Prescriptions</field>
+            <field name="res_model">gnuhealth.prescription.order</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_prescription_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_prescription_tree"/>
+            <field name="act_window" ref="action_gnuhealth_prescription_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_prescription_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_prescription_view"/>
+            <field name="act_window" ref="action_gnuhealth_prescription_view"/>
+        </record>
+
+
+        <menuitem name="Prescriptions" id="gnuhealth_prescription_menu"
+            parent="gnuhealth_menu" sequence="30"
+            action="action_gnuhealth_prescription_view"
+            icon="gnuhealth-prescription"/>
+
+<!-- Health Institutions -->
+
+        <record model="ir.ui.view" id="gnuhealth_institution_form">
+            <field name="model">gnuhealth.institution</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_institution_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_institution_tree">
+            <field name="model">gnuhealth.institution</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_institution_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_institution">
+            <field name="name">Institutions</field>
+            <field name="res_model">gnuhealth.institution</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_institution_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_institution_tree"/>
+            <field name="act_window" ref="action_gnuhealth_institution"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_institution_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_institution_form"/>
+            <field name="act_window" ref="action_gnuhealth_institution"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_institution"
+            id="gnuhealth_menu_institution" icon="gnuhealth-health-center"
+            parent="gnuhealth_menu" sequence="40"/>
+
+<!-- Shortcut to the Health center Buildings from the Institution -->
+
+        <record model="ir.action.act_window" id="act_building_view">
+            <field name="name">Buildings</field>
+            <field name="res_model">gnuhealth.hospital.building</field>
+            <field name="domain" eval="[('institution', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_building_keyword">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.institution,-1</field>
+            <field name="action" ref="act_building_view"/>
+        </record>
+
+<!-- Shortcut to the Health center units from the Institution -->
+
+        <record model="ir.action.act_window" id="act_unit_view">
+            <field name="name">Units</field>
+            <field name="res_model">gnuhealth.hospital.unit</field>
+            <field name="domain" eval="[('institution', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_unit_keyword">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.institution,-1</field>
+            <field name="action" ref="act_unit_view"/>
+        </record>
+
+<!-- Shortcut to the Health center Operating Rooms from the Institution -->
+
+        <record model="ir.action.act_window" id="act_or_view">
+            <field name="name">Operating Rooms</field>
+            <field name="res_model">gnuhealth.hospital.or</field>
+            <field name="domain" eval="[('institution', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_or_keyword">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.institution,-1</field>
+            <field name="action" ref="act_or_view"/>
+        </record>
+
+<!-- Shortcut to the Health center wards from the Institution -->
+
+        <record model="ir.action.act_window" id="act_ward_view">
+            <field name="name">Wards</field>
+            <field name="res_model">gnuhealth.hospital.ward</field>
+            <field name="domain" eval="[('institution', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_ward_keyword">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.institution,-1</field>
+            <field name="action" ref="act_ward_view"/>
+        </record>
+
+<!-- Shortcut to the Health center beds from the Institution -->
+
+        <record model="ir.action.act_window" id="act_bed_view">
+            <field name="name">Beds</field>
+            <field name="res_model">gnuhealth.hospital.bed</field>
+            <field name="domain" eval="[('institution', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_bed_keyword">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.institution,-1</field>
+            <field name="action" ref="act_bed_view"/>
+        </record>
+
+<!-- Health Institution Specialties / Services -->
+
+        <record model="ir.ui.view" id="gnuhealth_institution_specialties_form">
+            <field name="model">gnuhealth.institution.specialties</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_institution_specialties_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_institution_specialties_tree">
+            <field name="model">gnuhealth.institution.specialties</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_institution_specialties_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_institution_specialties">
+            <field name="name">Specialties by institution</field>
+            <field name="res_model">gnuhealth.institution.specialties</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_institution_specialties_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_institution_specialties_tree"/>
+            <field name="act_window" ref="action_gnuhealth_institution_specialties"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_institution_specialties_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_institution_specialties_form"/>
+            <field name="act_window" ref="action_gnuhealth_institution_specialties"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_institution_specialties"
+            id="gnuhealth_institution_specialties" icon="gnuhealth-list"
+            parent="gnuhealth_reporting_menu" sequence="1"/>
+
+
+<!-- Health Centers by OPerational Sectors -->
+
+        <record model="ir.ui.view" id="gnuhealth_institution_operationalsector_form">
+            <field name="model">gnuhealth.institution.operationalsector</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_institution_operationalsector_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_institution_operationalsector_tree">
+            <field name="model">gnuhealth.institution.operationalsector</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_institution_operationalsector_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_institution_operationalsector">
+            <field name="name">Operational sectors by institution</field>
+            <field name="res_model">gnuhealth.institution.operationalsector</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_institution_operationalsector_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_institution_operationalsector_tree"/>
+            <field name="act_window" ref="action_gnuhealth_institution_operationalsector"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_institution_operationalsector_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_institution_operationalsector_form"/>
+            <field name="act_window" ref="action_gnuhealth_institution_operationalsector"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_institution_operationalsector"
+            id="gnuhealth_institution_operationalsector" icon="gnuhealth-list"
+            parent="gnuhealth_reporting_menu" sequence="1"/>
+
+<!-- Hospital Building -->
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_building_view">
+            <field name="model">gnuhealth.hospital.building</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_hospital_building</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_building_tree">
+            <field name="model">gnuhealth.hospital.building</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_hospital_building_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_hospital_building_view">
+            <field name="name">Buildings</field>
+            <field name="res_model">gnuhealth.hospital.building</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_building_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_hospital_building_tree"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_building_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_building_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_hospital_building_view"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_building_view"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_hospital_building_view"
+            id="gnuhealth_conf_institution_building_add" icon="gnuhealth-list"
+            parent="gnuhealth_conf_institution" sequence="2"/>
+
+
+<!-- Hospital Unit -->
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_unit_view">
+            <field name="model">gnuhealth.hospital.unit</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_hospital_unit</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_unit_tree">
+            <field name="model">gnuhealth.hospital.unit</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_hospital_unit_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_hospital_unit_view">
+            <field name="name">Units</field>
+            <field name="res_model">gnuhealth.hospital.unit</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_unit_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_hospital_unit_tree"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_unit_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_unit_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_hospital_unit_view"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_unit_view"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_hospital_unit_view"
+            id="gnuhealth_conf_institution_unit_add" icon="gnuhealth-list"
+            parent="gnuhealth_conf_institution" sequence="3"/>
+
+
+<!-- Hospital Ward -->
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_ward_view">
+            <field name="model">gnuhealth.hospital.ward</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_hospital_ward</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_ward_tree">
+            <field name="model">gnuhealth.hospital.ward</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_hospital_ward_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_hospital_ward_view">
+            <field name="name">Wards</field>
+            <field name="res_model">gnuhealth.hospital.ward</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_ward_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_hospital_ward_tree"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_ward_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_ward_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_hospital_ward_view"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_ward_view"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_hospital_ward_view"
+            id="gnuhealth_conf_institution_ward_add" icon="gnuhealth-list"
+            parent="gnuhealth_conf_institution" sequence="3"/>
+
+
+<!-- Health center Bed -->
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_bed_view">
+            <field name="model">gnuhealth.hospital.bed</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_hospital_bed</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_bed_tree">
+            <field name="model">gnuhealth.hospital.bed</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_hospital_bed_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_hospital_bed_view">
+            <field name="name">Beds</field>
+            <field name="res_model">gnuhealth.hospital.bed</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_bed_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_hospital_bed_tree"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_bed_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_bed_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_hospital_bed_view"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_bed_view"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_hospital_bed_view"
+            id="gnuhealth_conf_institution_bed_add" icon="gnuhealth-list"
+            parent="gnuhealth_conf_institution" sequence="4"/>
+
+
+<!-- Hospital Operating Room - OR -  -->
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_or_view">
+            <field name="model">gnuhealth.hospital.or</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_hospital_or</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_hospital_or_tree">
+            <field name="model">gnuhealth.hospital.or</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_hospital_or_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_hospital_or_view">
+            <field name="name">Operating Rooms</field>
+            <field name="res_model">gnuhealth.hospital.or</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_or_view_list">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_hospital_or_tree"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_or_view"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_hospital_or_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_hospital_or_view"/>
+            <field name="act_window" ref="action_gnuhealth_hospital_or_view"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_hospital_or_view"
+            id="gnuhealth_conf_institution_or_add" icon="gnuhealth-list"
+            parent="gnuhealth_conf_institution" sequence="5"/>
+
+    </data>
+</tryton>

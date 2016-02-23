@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+<!-- Create the GNU HEALTH ICU icon -->
+        <record model="ir.ui.icon" id="gnuhealth_icu_icon">
+            <field name="name">gnuhealth-icu</field>
+            <field name="path">icons/gnuhealth_icu.svg</field>
+        </record>
+
+<!-- Initial Menu -->
+        <menuitem name="Intensive Care" id="gnuhealth_icu_menu"
+            parent="health_inpatient.gnuhealth_inpatient_menu" sequence="900" icon="gnuhealth-icu"/>
+
+
+<!-- Glasgow Coma Scale -->
+
+        <record model="ir.ui.view" id="gnuhealth_icu_glasgow_form">
+            <field name="model">gnuhealth.icu.glasgow</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_icu_glasgow_form</field>
+        </record>
+
+
+      <record model="ir.ui.view" id="gnuhealth_icu_glasgow_tree">
+            <field name="model">gnuhealth.icu.glasgow</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_icu_glasgow_tree</field>
+        </record>
+                
+
+        <record model="ir.action.act_window" id="action_gnuhealth_icu_glasgow_form">
+            <field name="name">GCS</field>
+            <field name="res_model">gnuhealth.icu.glasgow</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_icu_glasgow_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_icu_glasgow_tree"/>
+            <field name="act_window" ref="action_gnuhealth_icu_glasgow_form"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_icu_glasgow_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_icu_glasgow_form"/>
+            <field name="act_window" ref="action_gnuhealth_icu_glasgow_form"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_icu_glasgow_form"
+            id="menu_gnuhealth_icu_glasgow_list" icon="gnuhealth-list"
+            parent="gnuhealth_icu_menu"/>
+					
+
+<!-- Shortcut to the Glasgow scale from the Inpatient ICU section -->
+        <record model="ir.action.act_window" id="act_glasgow_form1">
+            <field name="name">Glasgow Coma Scale</field>
+            <field name="res_model">gnuhealth.icu.glasgow</field>
+            <field name="domain" eval="[('name.icu_admissions', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_glasgow_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.inpatient.icu,-1</field>
+            <field name="action" ref="act_glasgow_form1"/>
+        </record>
+
+
+
+<!-- APACHE II Score -->
+
+        <record model="ir.ui.view" id="gnuhealth_icu_apache2_form">
+            <field name="model">gnuhealth.icu.apache2</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_icu_apache2_form</field>
+        </record>
+
+
+      <record model="ir.ui.view" id="gnuhealth_icu_apache2_tree">
+            <field name="model">gnuhealth.icu.apache2</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_icu_apache2_tree</field>
+        </record>
+                
+
+        <record model="ir.action.act_window" id="action_gnuhealth_icu_apache2_form">
+            <field name="name">APACHE II Score</field>
+            <field name="res_model">gnuhealth.icu.apache2</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_icu_apache2_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_icu_apache2_tree"/>
+            <field name="act_window" ref="action_gnuhealth_icu_apache2_form"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_icu_apache2_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_icu_apache2_form"/>
+            <field name="act_window" ref="action_gnuhealth_icu_apache2_form"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_icu_apache2_form"
+            id="menu_gnuhealth_icu_apache2_list" icon="gnuhealth-list"
+            parent="gnuhealth_icu_menu"/>
+					
+
+<!-- Shortcut to the Apache II Score from the Inpatient ICU section -->
+        <record model="ir.action.act_window" id="act_apache_form1">
+            <field name="name">APACHE II</field>
+            <field name="res_model">gnuhealth.icu.apache2</field>
+            <field name="domain" eval="[('name.icu_admissions', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_apache_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.inpatient.icu,-1</field>
+            <field name="action" ref="act_apache_form1"/>
+        </record>
+
+<!-- Inpatient ICU-->
+
+
+        <record model="ir.ui.view" id="gnuhealth_inpatient_icu_form">
+            <field name="model">gnuhealth.inpatient.icu</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_inpatient_icu_form</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="gnuhealth_inpatient_icu_tree">
+            <field name="model">gnuhealth.inpatient.icu</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_inpatient_icu_tree</field>
+        </record>
+
+
+<!-- Patient Mechanical Ventilation -->
+
+
+        <record model="ir.ui.view" id="gnuhealth_icu_ventilation_form">
+            <field name="model">gnuhealth.icu.ventilation</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_icu_ventilation_form</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="gnuhealth_icu_ventilation_tree">
+            <field name="model">gnuhealth.icu.ventilation</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_icu_ventilation_tree</field>
+        </record>
+
+
+
+
+<!-- Patient Chest Drainage Assesment -->
+
+        <record model="ir.ui.view" id="gnuhealth_icu_chest_drainage_form">
+            <field name="model">gnuhealth.icu.chest_drainage</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_icu_chest_drainage_form</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="gnuhealth_icu_chest_drainage_tree">
+            <field name="model">gnuhealth.icu.chest_drainage</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_icu_chest_drainage_tree</field>
+        </record>
+
+
+<!-- Add explicit ECG menu item to ICU -->
+
+        <record model="ir.action.act_window" id="action_gnuhealth_icu_ecg_form1">
+            <field name="name">ECGs</field>
+            <field name="res_model">gnuhealth.patient.ecg</field>
+        </record>
+
+        <menuitem action="action_gnuhealth_icu_ecg_form1"
+            id="menu_gnuhealth_icu_ecgs_list1" icon="gnuhealth-list"
+            parent="gnuhealth_icu_menu"/>
+
+<!-- Shortcut to the inpatient ECG from the inpatient ICU section -->
+        <record model="ir.action.act_window" id="act_ecg_form1">
+            <field name="name">Inpatient ECGs</field>
+            <field name="res_model">gnuhealth.patient.ecg</field>
+            <field name="domain" eval="[('inpatient_registration_code.icu_admissions', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_ecg_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.inpatient.icu,-1</field>
+            <field name="action" ref="act_ecg_form1"/>
+        </record>
+
+
+<!-- Rounding view -->
+<!-- Update the existing rounding view with information about Intensive Care Unit - ICU -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_icu_rounding_view">
+            <field name="model">gnuhealth.patient.rounding</field>
+            <field name="inherit" ref="health_nursing.gnuhealth_patient_rounding_view" />
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_icu_rounding</field>
+        </record>
+
+
+        <record model="ir.action.act_window" id="action_gnuhealth_inpatient_icu_form">
+            <field name="name">Patient ICU Info</field>
+            <field name="res_model">gnuhealth.inpatient.icu</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_inpatient_icu_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_inpatient_icu_tree"/>
+            <field name="act_window" ref="action_gnuhealth_inpatient_icu_form"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_inpatient_icu_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_inpatient_icu_form"/>
+            <field name="act_window" ref="action_gnuhealth_inpatient_icu_form"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_inpatient_icu_form"
+            id="menu_gnuhealth_inpatient_icu_list" icon="gnuhealth-list"
+            parent="gnuhealth_icu_menu"/>
+
+    </data>
+</tryton>

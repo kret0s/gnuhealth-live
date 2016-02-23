@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+<!-- PARTY -->
+        <record model="ir.ui.view" id="gnuhealth_patient_view_form">
+            <field name="model">gnuhealth.patient</field>
+            <field name="inherit" ref="health.gnuhealth_patient_view_form"/>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_form</field>
+        </record>
+
+<!-- NEWBORN -->
+        <record model="ir.ui.view" id="view_newborn_form">
+            <field name="model">gnuhealth.newborn</field>
+            <field name="inherit" ref="health_pediatrics.gnuhealth_newborn_view"/>
+            <field name="type">form</field>
+            <field name="name">newborn_form</field>
+        </record>
+
+    </data>
+</tryton>

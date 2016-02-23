@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+        <record model="ir.action.report" id="report_patient_qrcard">
+            <field name="name">ID Cards - QR</field>
+            <field name="model">gnuhealth.patient</field>
+            <field name="report_name">patient.qrcard</field>
+            <field name="report">health_qrcodes/report/patient_card.odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_qrcard_patient">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="report_patient_qrcard"/>
+        </record>
+
+       <record model="ir.action.report" id="report_newborn_qrcard">
+            <field name="name">Newborn ID - QR</field>
+            <field name="model">gnuhealth.newborn</field>
+            <field name="report_name">newborn.qrcard</field>
+            <field name="report">health_qrcodes/report/newborn_card.odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_qrcard_newborn">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.newborn,-1</field>
+            <field name="action" ref="report_newborn_qrcard"/>
+        </record>
+
+    </data>
+</tryton>

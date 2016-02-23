@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+        <record model="ir.action.report" id="report_patient_card">
+            <field name="name">ID Cards</field>
+            <field name="model">gnuhealth.patient</field>
+            <field name="report_name">patient.card</field>
+            <field name="report">health/report/patient_card.odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_card_patient">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="report_patient_card"/>
+        </record>
+        <record model="ir.action.report" id="report_patient_medication">
+            <field name="name">Medications</field>
+            <field name="model">gnuhealth.patient</field>
+            <field name="report_name">patient.medication</field>
+            <field name="report">health/report/patient_medication_history.odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_medication_patient">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="report_patient_medication"/>
+        </record>
+
+        <record model="ir.action.report" id="report_patient_vaccination">
+            <field name="name">Vaccinations</field>
+            <field name="model">gnuhealth.patient</field>
+            <field name="report_name">patient.vaccination</field>
+            <field name="report">health/report/patient_vaccination_history.odt</field>
+        </record>
+
+        <record model="ir.action.keyword" id="report_vaccination_patient">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="report_patient_vaccination"/>
+        </record>
+
+        <record model="ir.action.report" id="report_patient_disease">
+            <field name="name">Health Conditions</field>
+            <field name="model">gnuhealth.patient</field>
+            <field name="report_name">patient.conditions_history</field>
+            <field name="report">health/report/patient_conditions_history.odt</field>
+        </record>
+
+        <record model="ir.action.keyword" id="report_disease_patient">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="report_patient_disease"/>
+        </record>
+
+        <record model="ir.action.report" id="report_prescription_order">
+            <field name="name">Prescription</field>
+            <field name="model">gnuhealth.prescription.order</field>
+            <field name="report_name">prescription.order</field>
+            <field name="report">health/report/prescription_orders.odt</field>
+        </record>
+
+        <record model="ir.action.keyword" id="keyword_prescription_order">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.prescription.order,-1</field>
+            <field name="action" ref="report_prescription_order"/>
+        </record>
+
+        <record model="ir.action.report" id="report_appointment_receipt">
+            <field name="name">Appointment Receipt</field>
+            <field name="model">gnuhealth.appointment</field>
+            <field name="report_name">appointment.receipt</field>
+            <field name="report">health/report/appointment_receipt.odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_receipt_appointment">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.appointment,-1</field>
+            <field name="action" ref="report_appointment_receipt"/>
+        </record>
+
+        <record model="ir.action.report" id="report_immunization_status">
+            <field name="name">Immunization Status Report</field>
+            <field name="model">gnuhealth.patient</field>
+            <field name="report_name">gnuhealth.immunization_status_report</field>
+            <field name="report">health/report/immunization_status_report.odt</field>
+        </record>
+
+        <record model="ir.action.report" id="report_patient_evaluation">
+            <field name="name">Patient Evaluation Summary</field>
+            <field name="model">gnuhealth.patient.evaluation</field>
+            <field name="report_name">gnuhealth.patient_evaluation</field>
+            <field name="report">health/report/patient_evaluation.odt</field>
+        </record>
+        <record model="ir.action.keyword" id="report_evaluation_patient">
+            <field name="keyword">form_print</field>
+            <field name="model">gnuhealth.patient.evaluation,-1</field>
+            <field name="action" ref="report_patient_evaluation"/>
+        </record>
+
+        
+    </data>
+</tryton>

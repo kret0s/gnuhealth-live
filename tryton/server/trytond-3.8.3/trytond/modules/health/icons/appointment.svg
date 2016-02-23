@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="97px" height="97px" viewBox="0 0 97 97" style="enable-background:new 0 0 97 97;" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="14.6357" y1="83.8486" x2="78.5009" y2="17.7143">
+	<stop  offset="0" style="stop-color:#0A8991"/>
+	<stop  offset="0.0102" style="stop-color:#1B8B93"/>
+	<stop  offset="0.1537" style="stop-color:#6FA6AD"/>
+	<stop  offset="0.2988" style="stop-color:#A0C0C6"/>
+	<stop  offset="0.4429" style="stop-color:#C4D6DA"/>
+	<stop  offset="0.5858" style="stop-color:#DEE8EB"/>
+	<stop  offset="0.727" style="stop-color:#F1F5F6"/>
+	<stop  offset="0.866" style="stop-color:#FCFDFD"/>
+	<stop  offset="1" style="stop-color:#FFFFFF"/>
+</linearGradient>
+<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" cx="48.563" cy="48.715" r="47.245"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="42.7446" y1="-34.48" x2="53.9945" y2="126.4003">
+	<stop  offset="0" style="stop-color:#0A8991"/>
+	<stop  offset="0.015" style="stop-color:#38929A"/>
+	<stop  offset="0.0528" style="stop-color:#6EA6AD"/>
+	<stop  offset="0.0958" style="stop-color:#96BAC0"/>
+	<stop  offset="0.1431" style="stop-color:#B5CCD1"/>
+	<stop  offset="0.1959" style="stop-color:#CDDCDF"/>
+	<stop  offset="0.2564" style="stop-color:#E0E9EC"/>
+	<stop  offset="0.3283" style="stop-color:#EEF3F5"/>
+	<stop  offset="0.4195" style="stop-color:#F8FAFB"/>
+	<stop  offset="0.553" style="stop-color:#FEFEFE"/>
+	<stop  offset="1" style="stop-color:#FFFFFF"/>
+</linearGradient>
+<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);" cx="48.563" cy="48.715" r="38.293"/>
+<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#08828B;stroke-width:10.0001;stroke-miterlimit:22.9256;" x1="63.743" y1="63.842" x2="39.594" y2="39.691"/>
+<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#08828B;stroke-width:10.0001;stroke-miterlimit:22.9256;" x1="71.622" y1="24.404" x2="40.238" y2="55.789"/>
+<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" cx="47.702" cy="48.017" r="5.968"/>
+</svg>

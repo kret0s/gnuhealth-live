@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="97px" height="97px" viewBox="0 0 97 97" style="enable-background:new 0 0 97 97;" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-95.8613" y1="209.1387" x2="59.7259" y2="36.3416">
+	<stop  offset="0" style="stop-color:#34A6AE"/>
+	<stop  offset="1" style="stop-color:#FFFFFF"/>
+</linearGradient>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+	M11.475,1.047h56.03l22.48,22.911v68.025c0,2.242-1.801,4.078-4.001,4.078H11.475c-2.2,0-4-1.836-4-4.078V5.125
+	C7.475,2.882,9.275,1.047,11.475,1.047z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="77.9805" y1="14.3203" x2="68.3588" y2="25.3888">
+	<stop  offset="0" style="stop-color:#34A6AE"/>
+	<stop  offset="1" style="stop-color:#FFFFFF"/>
+</linearGradient>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+	M89.984,24.897H71.505c-2.2,0-4-1.834-4-4.077V1.986L89.984,24.897z"/>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FABF73;stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+	M21.129,35.744h10.201c1.093,0,1.986,0.912,1.986,2.026v46.659c0,1.113-0.895,2.025-1.986,2.025H21.129
+	c-1.093,0-1.988-0.911-1.988-2.025V37.77C19.142,36.655,20.036,35.744,21.129,35.744z"/>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#1E8991;stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+	M43.486,57.018h10.201c1.094,0,1.987,0.915,1.987,2.026v25.385c0,1.11-0.896,2.025-1.987,2.025H43.486
+	c-1.09,0-1.987-0.911-1.987-2.025V59.044C41.499,57.931,42.393,57.018,43.486,57.018z"/>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#1E8991;stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+	M65.843,44.862h10.2c1.094,0,1.989,0.915,1.989,2.025v37.542c0,1.11-0.899,2.025-1.989,2.025h-10.2
+	c-1.089,0-1.988-0.911-1.988-2.025V46.887C63.854,45.773,64.75,44.862,65.843,44.862z"/>
+</svg>

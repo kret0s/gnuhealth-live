@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="97px" height="97px" viewBox="0 0 97 97" style="enable-background:new 0 0 97 97;" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="37.1367" y1="89.2559" x2="69.9277" y2="36.4445">
+	<stop  offset="0" style="stop-color:#046973"/>
+	<stop  offset="0.3337" style="stop-color:#17808A"/>
+	<stop  offset="0.7539" style="stop-color:#2C9BA4"/>
+	<stop  offset="1" style="stop-color:#34A6AE"/>
+</linearGradient>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+	M42.39,31.873h20.819c8.816,0,16.029,7.214,16.029,16.029v32.254c0,8.815-7.214,16.029-16.029,16.029H42.39
+	c-8.815,0-16.029-7.213-16.029-16.029V47.902C26.36,39.086,33.574,31.873,42.39,31.873z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="32.8804" y1="108.2324" x2="61.9217" y2="-0.1512">
+	<stop  offset="0.3058" style="stop-color:#046973"/>
+	<stop  offset="0.6318" style="stop-color:#34A6AE"/>
+</linearGradient>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+	M28.59,37.079c5.126,0,9.282,4.156,9.282,9.283c0,0.409-0.027,0.812-0.078,1.207v20.556h23.338c0.291-0.027,0.587-0.043,0.886-0.043
+	c5.126,0,9.282,4.156,9.282,9.283c0,5.047-4.027,9.152-9.044,9.279v0.053H28.434v-0.053c-5.054-0.082-9.126-4.205-9.126-9.279
+	c0-0.18,0.005-0.357,0.016-0.533V46.894c-0.01-0.176-0.016-0.354-0.016-0.532C19.308,41.235,23.463,37.079,28.59,37.079z"/>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" d="
+	M37.795,55.982v12.143h25.838c0.292-0.027-1.826-0.043,0.886-0.043c2.713,0,9.282,4.196,9.282,9.283
+	c0,5.086-4.027,9.152-9.043,9.279v0.053H28.434v-0.052c-5.054-0.083-9.126-4.207-9.126-9.28c0-0.18,0.005-0.357,0.016-0.533v-20.85
+	H37.795z"/>
+<line style="fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#08828B;stroke-width:10.0001;stroke-linecap:square;stroke-linejoin:bevel;stroke-miterlimit:22.9256;" x1="66" y1="36.5" x2="44" y2="91.75"/>
+<path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.5669;stroke-miterlimit:22.9256;" d="
+	M37.291,29.525l27.016,0L37.291,29.525z"/>
+<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:#F9B97A;stroke:#08828B;stroke-width:2.0001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:22.9256;" cx="50.799" cy="20.681" r="19.068"/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="41.8848" y1="30.0732" x2="60.2401" y2="10.3895">
+	<stop  offset="0" style="stop-color:#FABF73"/>
+	<stop  offset="1" style="stop-color:#FFFFFF"/>
+</linearGradient>
+<circle style="fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_3_);" cx="50.799" cy="20.512" r="13.724"/>
+</svg>

@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+<!-- Add other relevant icons -->
+
+        <record model="ir.ui.icon" id="gnuhealth_baby_boy_icon">
+            <field name="name">icon-baby-sitting</field>
+            <field name="path">icons/baby_boy_sitting.svg</field>
+        </record>
+
+        <menuitem name="Pediatrics" parent="health.gnuhealth_menu"
+            id="gnuhealth_pediatrics" sequence="60"
+            icon="icon-baby-sitting"/>
+
+        <record model="ir.ui.icon" id="gnuhealth_list_icon">
+            <field name="name">gnuhealth-list</field>
+            <field name="path">../health/icons/tryton-list.svg</field>
+        </record>
+
+<!-- Pediatric Symptoms Evaluation -->
+
+        <record model="ir.ui.view" id="gnuhealth_pediatric_symptoms_checklist_view">
+            <field name="model">gnuhealth.patient.psc</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_pediatric_symptoms_checklist</field>
+        </record>
+
+<!-- Tree view for PSC -->
+
+        <record model="ir.ui.view" id="gnuhealth_pediatric_symptoms_checklist_tree">
+            <field name="model">gnuhealth.patient.psc</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_pediatric_symptoms_checklist_tree</field>
+        </record>
+
+<!-- Add the Pediatric Symptoms Checklist to the Patient form -->
+<!--
+        <record model="ir.ui.view" id="gnuhealth_patient_view">
+            <field name="model">gnuhealth.patient</field>
+            <field name="inherit" ref="health.gnuhealth_patient_view_form" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <![CDATA[
+                <data>
+                    <xpath
+                        expr="/form/notebook/page[@id=&quot;patient_diseases&quot;]"
+                        position="after">
+
+                        <page string="PSC" id="page_psc">
+                            <field name="psc"/>
+                        </page>
+
+                    </xpath>
+                </data>
+                ]]>
+            </field>
+        </record>
+-->
+
+
+        <record model="ir.action.act_window" id="gnuhealth_action_psc">
+            <field name="name">PSC</field>
+            <field name="res_model">gnuhealth.patient.psc</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_psc_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_pediatric_symptoms_checklist_tree"/>
+            <field name="act_window" ref="gnuhealth_action_psc"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_psc_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_pediatric_symptoms_checklist_view"/>
+            <field name="act_window" ref="gnuhealth_action_psc"/>
+        </record>
+
+        <menuitem parent="gnuhealth_pediatrics" icon="gnuhealth-list"
+            action="gnuhealth_action_psc" id="gnuhealth_conf_edit_psc"/>
+
+
+<!-- Shortcut to the Patient Evaluations -->
+
+
+        <record model="ir.action.act_window" id="act_psc_form1">
+            <field name="name">PSC</field>
+            <field name="res_model">gnuhealth.patient.psc</field>
+            <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+
+        <record model="ir.action.keyword"
+                id="act_open_psc_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="act_psc_form1"/>
+        </record>
+
+
+<!-- APGAR Scoring -->
+
+        <record model="ir.ui.view" id="gnuhealth_neonatal_apgar_view">
+            <field name="model">gnuhealth.neonatal.apgar</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_neonatal_apgar</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_neonatal_apgar_tree">
+            <field name="model">gnuhealth.neonatal.apgar</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_neonatal_apgar_tree</field>
+        </record>
+
+<!-- Newborn -->
+
+        <record model="ir.ui.view" id="gnuhealth_newborn_view">
+            <field name="model">gnuhealth.newborn</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_newborn</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_newborn_tree">
+            <field name="model">gnuhealth.newborn</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_newborn_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="gnuhealth_action_newborn">
+            <field name="name">Newborn</field>
+            <field name="res_model">gnuhealth.newborn</field>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_newborn_list_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_newborn_tree"/>
+            <field name="act_window" ref="gnuhealth_action_newborn"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_newborn_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="gnuhealth_newborn_view"/>
+            <field name="act_window" ref="gnuhealth_action_newborn"/>
+        </record>
+
+        <menuitem parent="gnuhealth_pediatrics" sequence="0" icon="gnuhealth-list"
+            action="gnuhealth_action_newborn" id="gnuhealth_conf_edit_newborn"/>
+
+<!-- Shortcut to the Newborn from the Patient -->
+
+        <record model="ir.action.act_window" id="act_newborn_form1">
+            <field name="name">Neonatal Info</field>
+            <field name="res_model">gnuhealth.newborn</field>
+            <field name="domain" eval="[('patient', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_newborn_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="act_newborn_form1"/>
+        </record>
+
+    </data>
+</tryton>

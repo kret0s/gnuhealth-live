@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data skiptest="1">
+
+<!-- Sequences for Inpatient Registration -->
+
+        <record id="seq_type_gnuhealth_inpatient_registration" model="ir.sequence.type">
+            <field name="name">Inpatient Registration</field>
+            <field name="code">gnuhealth.inpatient.registration</field>
+        </record>
+
+        <record id="seq_gnuhealth_inpatient_registration" model="ir.sequence">
+            <field name="name">Inpatient Registration</field>
+            <field name="code">gnuhealth.inpatient.registration</field>
+            <field name="prefix">INPAC</field>
+            <field name="padding">3</field>
+        </record>
+
+        <record model="ir.property" id="property_inpatient_registration_sequence">
+            <field name="field" 
+                search="[('model.model', '=', 'gnuhealth.sequences'), ('name', '=', 'inpatient_registration_sequence')]"/>
+            <field name="value" eval="'ir.sequence,' + str(ref('seq_gnuhealth_inpatient_registration'))"/>
+        </record>
+
+<!-- Sequences for Inpatient Meal Orders -->
+
+        <record id="seq_type_gnuhealth_inpatient_meal_order" model="ir.sequence.type">
+            <field name="name">Inpatient Meal Order</field>
+            <field name="code">gnuhealth.inpatient.meal.order</field>
+        </record>
+
+        <record id="seq_gnuhealth_inpatient_meal_order" model="ir.sequence">
+            <field name="name">Inpatient Meal Order</field>
+            <field name="code">gnuhealth.inpatient.meal.order</field>
+            <field name="prefix">MEAL</field>
+            <field name="padding">3</field>
+        </record>
+
+        <record model="ir.property" id="property_inpatient_meal_order_sequence">
+            <field name="field" 
+                search="[('model.model', '=', 'gnuhealth.sequences'), ('name', '=', 'inpatient_meal_order_sequence')]"/>
+            <field name="value" eval="'ir.sequence,' + str(ref('seq_gnuhealth_inpatient_meal_order'))"/>
+        </record>
+
+    </data>
+</tryton>

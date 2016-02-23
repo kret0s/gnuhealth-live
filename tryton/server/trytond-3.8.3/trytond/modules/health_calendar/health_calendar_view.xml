@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <!-- Add other relevant icons -->
+
+        <record model="ir.ui.icon" id="gnuhealth_calendar_icon">
+            <field name="name">gnuhealth-calendar</field>
+            <field name="path">icons/calendar_icon.svg</field>
+        </record>
+        <record model="ir.ui.icon" id="gnuhealth_execute_icon">
+            <field name="name">gnuhealth-execute</field>
+            <field name="path">icons/execute_icon.svg</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_appointment_calendar">
+            <field name="model">gnuhealth.appointment</field>
+            <field name="type">calendar</field>
+            <field name="name">gnuhealth_appointment_calendar</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_gnuhealth_appointment_calendar">
+            <field name="name">Appointments Calendar</field>
+            <field name="res_model">gnuhealth.appointment</field>
+            <field name="domain" eval="[('state', '!=', 'free')]" pyson="1"/>
+        </record>
+
+        <record model="ir.action.act_window.view" id="act_gnuhealth_appointment_view_calendar">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="gnuhealth_appointment_calendar"/>
+            <field name="act_window" ref="action_gnuhealth_appointment_calendar"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_gnuhealth_appointment_form_calendar">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="health.gnuhealth_appointment_form"/>
+            <field name="act_window" ref="action_gnuhealth_appointment_calendar"/>
+        </record>
+
+        <menuitem action="action_gnuhealth_appointment_calendar"
+            id="menu_gnuhealth_appointment_calendar"
+            parent="health.gnuhealth_appointment_menu"
+            icon="gnuhealth-calendar"/>
+
+    <!-- User -->
+
+        <record model="ir.ui.view" id="gnuhealth_calendar_user_view">
+            <field name="model">res.user</field>
+            <field name="inherit" ref="res.user_view_form"/>
+            <field name="name">gnuhealth_calendar_user</field>
+        </record>
+
+    <!-- Appointment details -->
+
+        <record model="ir.ui.view" id="gnuhealth_calendar_appointment_view">
+            <field name="model">gnuhealth.appointment</field>
+            <field name="inherit" ref="health.gnuhealth_appointment_form"/>
+            <field name="name">gnuhealth_calendar_appointment</field>
+        </record>
+
+    </data>
+</tryton>

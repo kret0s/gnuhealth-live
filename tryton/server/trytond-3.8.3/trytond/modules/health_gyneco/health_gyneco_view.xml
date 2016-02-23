@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+
+<!-- Patient Pregnancies -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_pregnancy_view">
+            <field name="model">gnuhealth.patient.pregnancy</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient_pregnancy</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_patient_pregnancy_tree">
+            <field name="model">gnuhealth.patient.pregnancy</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_patient_pregnancy_tree</field>
+        </record>
+
+
+<!-- PRENATAL Evaluation -->
+
+        <record model="ir.ui.view" id="gnuhealth_prenatal_evaluation_view">
+            <field name="model">gnuhealth.patient.prenatal.evaluation</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_prenatal_evaluation</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_prenatal_evaluation_tree">
+            <field name="model">gnuhealth.patient.prenatal.evaluation</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_prenatal_evaluation_tree</field>
+        </record>
+
+
+
+
+<!-- Perinatal -->
+
+        <record model="ir.ui.view" id="gnuhealth_perinatal_view">
+            <field name="model">gnuhealth.perinatal</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_perinatal</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_perinatal_tree">
+            <field name="model">gnuhealth.perinatal</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_perinatal_tree</field>
+        </record>
+
+<!-- Puerperium -->
+
+        <record model="ir.ui.view" id="gnuhealth_puerperium_monitor_view">
+            <field name="model">gnuhealth.puerperium.monitor</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_puerperium_monitor</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_puerperium_monitor_tree">
+            <field name="model">gnuhealth.puerperium.monitor</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_puerperium_monitor_tree</field>
+        </record>
+
+<!-- Perinatal Monitoring -->
+
+        <record model="ir.ui.view" id="gnuhealth_perinatal_monitor_view">
+            <field name="model">gnuhealth.perinatal.monitor</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_perinatal_monitor</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_perinatal_monitor_tree">
+            <field name="model">gnuhealth.perinatal.monitor</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_perinatal_monitor_tree</field>
+        </record>
+
+
+<!-- Menstrual history information -->
+
+        <record model="ir.ui.view" id="gnuhealth_menstrual_history_view">
+            <field name="model">gnuhealth.patient.menstrual_history</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_menstrual_history</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_menstrual_history_tree">
+            <field name="model">gnuhealth.patient.menstrual_history</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_menstrual_history_tree</field>
+        </record>
+
+<!-- PAP history information -->
+
+        <record model="ir.ui.view" id="gnuhealth_pap_history_view">
+            <field name="model">gnuhealth.patient.pap_history</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_pap_history</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_pap_history_tree">
+            <field name="model">gnuhealth.patient.pap_history</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_pap_history_tree</field>
+        </record>
+
+
+<!-- Mammography history information -->
+
+        <record model="ir.ui.view" id="gnuhealth_mammography_history_view">
+            <field name="model">gnuhealth.patient.mammography_history</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_mammography_history</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_mammography_history_tree">
+            <field name="model">gnuhealth.patient.mammography_history</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_mammography_history_tree</field>
+        </record>
+
+<!-- Colposcopy history information -->
+
+        <record model="ir.ui.view" id="gnuhealth_colposcopy_history_view">
+            <field name="model">gnuhealth.patient.colposcopy_history</field>
+            <field name="type">form</field>
+            <field name="name">gnuhealth_colposcopy_history</field>
+        </record>
+
+        <record model="ir.ui.view" id="gnuhealth_colposcopy_history_tree">
+            <field name="model">gnuhealth.patient.colposcopy_history</field>
+            <field name="type">tree</field>
+            <field name="name">gnuhealth_colposcopy_history_tree</field>
+        </record>
+
+
+<!-- Include the Gynecological and Obstetric pages into the Patient History -->
+
+        <record model="ir.ui.view" id="gnuhealth_patient_view">
+            <field name="model">gnuhealth.patient</field>
+            <field name="inherit" ref="health.gnuhealth_patient_view_form" />
+            <field name="type">form</field>
+            <field name="name">gnuhealth_patient</field>
+        </record>
+
+<!-- Shortcut to the Patient Pregnancies -->
+        <record model="ir.action.act_window" id="act_pregnancy_form1">
+            <field name="name">Obstetric History</field>
+            <field name="res_model">gnuhealth.patient.pregnancy</field>
+            <field name="domain" eval="[('name', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_pregnancy_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">gnuhealth.patient,-1</field>
+            <field name="action" ref="act_pregnancy_form1"/>
+        </record>
+
+
+
+    </data>
+</tryton>

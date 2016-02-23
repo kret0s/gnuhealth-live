@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    country = trytond.modules.country
+    

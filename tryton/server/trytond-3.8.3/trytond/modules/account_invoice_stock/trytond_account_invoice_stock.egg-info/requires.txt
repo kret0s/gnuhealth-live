@@ -1,0 +1,4 @@
+trytond_account_invoice >= 3.8, < 3.9
+trytond_stock >= 3.8, < 3.9
+trytond_product >= 3.8, < 3.9
+trytond >= 3.8, < 3.9

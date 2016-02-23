@@ -1,0 +1,7 @@
+python-sql
+trytond_account >= 3.8, < 3.9
+trytond_party >= 3.8, < 3.9
+trytond_product >= 3.8, < 3.9
+trytond_purchase >= 3.8, < 3.9
+trytond_stock >= 3.8, < 3.9
+trytond >= 3.8, < 3.9
