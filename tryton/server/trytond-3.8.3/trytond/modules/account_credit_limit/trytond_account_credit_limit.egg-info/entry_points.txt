@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    account_credit_limit = trytond.modules.account_credit_limit
+    

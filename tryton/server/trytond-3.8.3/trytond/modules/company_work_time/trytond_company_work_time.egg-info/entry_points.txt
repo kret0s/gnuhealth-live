@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    company_work_time = trytond.modules.company_work_time
+    
