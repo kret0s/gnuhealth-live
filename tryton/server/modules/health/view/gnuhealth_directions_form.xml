@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<form string="Procedures">
-    <label name="procedure"/>
-    <field name="procedure"/>
-    <newline/>
-    <label name="comments"/>
-    <field name="comments"/>
-</form>

@@ -1,7 +1,9 @@
 # Install Dependencies using the command 'sudo sh Dependeny.sh' 
 
 
-sudo apt-get install -y python-dateutil python-lxml python-polib python-relatorio python-ldap python-vobject python-stdnum build-essential python-dev python-pip libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev python-ldap bsdtar python-imaging python2.7-cracklib postgresql postgresql-server-dev-all libjpeg-dev &&
+sudo apt-get install -y python-sql python-dateutil python-lxml python-polib python-relatorio python-ldap python-vobject python-stdnum build-essential python-dev python-pip libxml2-dev libxslt1-dev libldap2-dev libsasl2-dev python-ldap bsdtar python-imaging python2.7-cracklib postgresql postgresql-server-dev-all libjpeg-dev &&
+
+sudo pip install simpleeval --upgrade &&
 
 sudo pip install simpleeval --upgrade &&
 
@@ -39,4 +41,6 @@ sudo pip install python-sql --upgrade &&
 
 sudo pip install python-stdnum --upgrade &&
 
-sudo pip install simpleeval --upgrade
+sudo pip install simpleeval --upgrade &&
+
+sudo easy_install python-sql

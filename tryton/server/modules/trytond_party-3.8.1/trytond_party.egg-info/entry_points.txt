@@ -1,4 +1,0 @@
-
-    [trytond.modules]
-    party = trytond.modules.party
-    

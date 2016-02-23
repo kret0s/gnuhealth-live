@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<tree string="Operational Sector x Health Institution" editable="top">
-    <field name="name"/>
-    <field name="operational_sector"/>
-</tree>

@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<tree string="Procedure">
-    <field name="name"/>
-    <field name="description"/>
-</tree>

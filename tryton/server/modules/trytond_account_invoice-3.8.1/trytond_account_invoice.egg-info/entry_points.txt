@@ -1,4 +1,0 @@
-
-    [trytond.modules]
-    account_invoice = trytond.modules.account_invoice
-    

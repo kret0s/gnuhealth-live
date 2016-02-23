@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<form string="Operational Area">
-    <label name="name"/>
-    <field name="name"/>
-    <newline/>
-    <field name="operational_sector" colspan="4"/>
-    <field name="info" colspan="4"/>
-</form>

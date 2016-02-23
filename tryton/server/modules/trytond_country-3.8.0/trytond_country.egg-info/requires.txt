@@ -1,4 +1,0 @@
-trytond >= 3.8, < 3.9
-
-[GeoNames]
-proteus >= 3.8, < 3.9
