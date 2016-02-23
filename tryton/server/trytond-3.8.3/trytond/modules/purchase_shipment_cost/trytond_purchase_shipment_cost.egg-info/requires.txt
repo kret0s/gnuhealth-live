@@ -1,0 +1,13 @@
+trytond_carrier >= 3.8, < 3.9
+trytond_currency >= 3.8, < 3.9
+trytond_stock >= 3.8, < 3.9
+trytond >= 3.8, < 3.9
+
+[account_product]
+trytond_account_product >= 3.8, < 3.9
+
+[account_stock_continental]
+trytond_account_stock_continental >= 3.8, < 3.9
+
+[account_stock_anglo_saxon]
+trytond_account_stock_anglo_saxon >= 3.8, < 3.9

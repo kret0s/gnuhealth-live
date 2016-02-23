@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    sale = trytond.modules.sale
+    

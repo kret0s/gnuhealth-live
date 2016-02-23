@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    account_invoice_history = trytond.modules.account_invoice_history
+    

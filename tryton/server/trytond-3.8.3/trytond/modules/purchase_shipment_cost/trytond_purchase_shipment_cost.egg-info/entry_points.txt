@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    purchase_shipment_cost = trytond.modules.purchase_shipment_cost
+    

@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    sale_shipment_grouping = trytond.modules.sale_shipment_grouping
+    

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/notebook" position="inside">
+        <page string="Notifications"
+            id="notification" col="2">
+            <separator string="Calendar Email Notifications"
+                id="calendar_email_notification" colspan="2"/>
+            <label name="calendar_email_notification_new"/>
+            <field name="calendar_email_notification_new"/>
+            <label name="calendar_email_notification_update"/>
+            <field name="calendar_email_notification_update"/>
+            <label name="calendar_email_notification_cancel"/>
+            <field name="calendar_email_notification_cancel"/>
+            <label name="calendar_email_notification_partstat"/>
+            <field name="calendar_email_notification_partstat"/>
+        </page>
+    </xpath>
+</data>

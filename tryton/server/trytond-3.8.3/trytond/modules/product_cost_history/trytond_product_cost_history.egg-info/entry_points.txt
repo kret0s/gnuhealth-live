@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    product_cost_history = trytond.modules.product_cost_history
+    

@@ -1,0 +1,231 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:calendar.event.attendee:"
+msgid "    * "
+msgstr ""
+
+msgctxt "error:calendar.event.attendee:"
+msgid ""
+"%s (%s) changed his/her participation status to: %s\n"
+"\n"
+msgstr ""
+
+msgctxt "error:calendar.event.attendee:"
+msgid ""
+"%s (%s) has accepted this invitation:\n"
+"\n"
+msgstr ""
+
+msgctxt "error:calendar.event.attendee:"
+msgid ""
+"%s (%s) has declined this invitation:\n"
+"\n"
+msgstr ""
+
+msgctxt "error:calendar.event.attendee:"
+msgid "%s: %s @ %s"
+msgstr ""
+
+msgctxt "error:calendar.event.attendee:"
+msgid "(No Subject)"
+msgstr ""
+
+msgctxt "error:calendar.event.attendee:"
+msgid ":"
+msgstr ""
+
+msgctxt "error:calendar.event.attendee:"
+msgid "When"
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid "    * "
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid "(No Subject)"
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid ":"
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid "Cancelled Event: %s @ %s"
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid "Invitation: %s @ %s"
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid ""
+"This event has been canceled.\n"
+"\n"
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid ""
+"This event has been changed.\n"
+"\n"
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid "Updated Invitation: %s @ %s"
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid "When"
+msgstr ""
+
+msgctxt "error:calendar.event:"
+msgid ""
+"You have been invited to the following event.\n"
+"\n"
+msgstr ""
+
+msgctxt "field:calendar.event,organizer_schedule_agent:"
+msgid "Schedule Agent"
+msgstr ""
+
+msgctxt "field:calendar.event,organizer_schedule_status:"
+msgid "Schedule Status"
+msgstr ""
+
+msgctxt "field:calendar.event.attendee,schedule_agent:"
+msgid "Schedule Agent"
+msgstr ""
+
+msgctxt "field:calendar.event.attendee,schedule_status:"
+msgid "Schedule Status"
+msgstr ""
+
+msgctxt "field:res.user,calendar_email_notification_cancel:"
+msgid "Cancelled invitations"
+msgstr ""
+
+msgctxt "field:res.user,calendar_email_notification_new:"
+msgid "New invitations"
+msgstr ""
+
+msgctxt "field:res.user,calendar_email_notification_partstat:"
+msgid "Invitation Replies"
+msgstr ""
+
+msgctxt "field:res.user,calendar_email_notification_update:"
+msgid "Changed invitations"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_agent:"
+msgid ""
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_agent:"
+msgid "Client"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_agent:"
+msgid "None"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_agent:"
+msgid "Server"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid ""
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "1.0"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "1.1"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "1.2"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "3.7"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "3.8"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "5.1"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "5.2"
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "5.3"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_agent:"
+msgid ""
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_agent:"
+msgid "Client"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_agent:"
+msgid "None"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_agent:"
+msgid "Server"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid ""
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "1.0"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "1.1"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "1.2"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "3.7"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "3.8"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "5.1"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "5.2"
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "5.3"
+msgstr ""
+
+msgctxt "view:res.user:"
+msgid "Calendar Email Notifications"
+msgstr ""
+
+msgctxt "view:res.user:"
+msgid "Notifications"
+msgstr ""

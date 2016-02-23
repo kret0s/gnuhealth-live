@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    calendar_scheduling = trytond.modules.calendar_scheduling
+    

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+
+        <record model="ir.action.report" id="report_party_vcard">
+            <field name="name">VCard</field>
+            <field name="model">party.party</field>
+            <field name="report_name">party_vcarddav.party.vcard</field>
+            <field name="extension">vcf</field>
+        </record>
+
+        <record model="ir.action.keyword" id="create_vcard_keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">party.party,-1</field>
+            <field name="action" ref="report_party_vcard"/>
+        </record>
+
+    </data>
+</tryton>

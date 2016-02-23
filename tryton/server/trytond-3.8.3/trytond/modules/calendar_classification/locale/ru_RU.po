@@ -1,0 +1,11 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:calendar.event:"
+msgid "Busy"
+msgstr "Занят"
+
+msgctxt "error:calendar.event:"
+msgid "Free"
+msgstr "Свободно"

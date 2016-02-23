@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    stock_inventory_location = trytond.modules.stock_inventory_location
+    

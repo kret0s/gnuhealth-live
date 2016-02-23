@@ -1,0 +1,7 @@
+simpleeval
+trytond_company >= 3.8, < 3.9
+trytond_product >= 3.8, < 3.9
+trytond_product_price_list >= 3.8, < 3.9
+trytond_sale >= 3.8, < 3.9
+trytond_sale_price_list >= 3.8, < 3.9
+trytond >= 3.8, < 3.9

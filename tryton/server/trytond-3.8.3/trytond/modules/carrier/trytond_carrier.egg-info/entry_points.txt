@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    carrier = trytond.modules.carrier
+    

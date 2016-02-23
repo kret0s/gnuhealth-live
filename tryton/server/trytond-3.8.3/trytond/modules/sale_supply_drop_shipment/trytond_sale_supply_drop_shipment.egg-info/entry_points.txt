@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    sale_supply_drop_shipment = trytond.modules.sale_supply_drop_shipment
+    

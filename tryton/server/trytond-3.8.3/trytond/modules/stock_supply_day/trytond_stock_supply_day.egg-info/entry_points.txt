@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    stock_supply_day = trytond.modules.stock_supply_day
+    

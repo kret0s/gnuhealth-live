@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    timesheet = trytond.modules.timesheet
+    

@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    bank = trytond.modules.bank
+    

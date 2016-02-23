@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    dashboard = trytond.modules.dashboard
+    

@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    calendar_classification = trytond.modules.calendar_classification
+    

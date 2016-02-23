@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    party_siret = trytond.modules.party_siret
+    

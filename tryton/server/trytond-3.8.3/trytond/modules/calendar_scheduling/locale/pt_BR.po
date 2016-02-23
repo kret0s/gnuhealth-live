@@ -1,0 +1,243 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:calendar.event.attendee:"
+msgid "    * "
+msgstr "   * "
+
+msgctxt "error:calendar.event.attendee:"
+msgid ""
+"%s (%s) changed his/her participation status to: %s\n"
+"\n"
+msgstr ""
+"%s (%s) alterou o estado de sua participação para: %s\n"
+"\n"
+
+msgctxt "error:calendar.event.attendee:"
+msgid ""
+"%s (%s) has accepted this invitation:\n"
+"\n"
+msgstr ""
+"%s (%s) aceitou este convite:\n"
+"\n"
+
+msgctxt "error:calendar.event.attendee:"
+msgid ""
+"%s (%s) has declined this invitation:\n"
+"\n"
+msgstr ""
+"%s (%s) recusou este convite:\n"
+"\n"
+
+msgctxt "error:calendar.event.attendee:"
+msgid "%s: %s @ %s"
+msgstr "%s: %s @ %s"
+
+msgctxt "error:calendar.event.attendee:"
+msgid "(No Subject)"
+msgstr "(Sem assunto)"
+
+msgctxt "error:calendar.event.attendee:"
+msgid ":"
+msgstr ":"
+
+msgctxt "error:calendar.event.attendee:"
+msgid "When"
+msgstr "Quando"
+
+msgctxt "error:calendar.event:"
+msgid "    * "
+msgstr "    * "
+
+msgctxt "error:calendar.event:"
+msgid "(No Subject)"
+msgstr "(Sem assunto)"
+
+msgctxt "error:calendar.event:"
+msgid ":"
+msgstr ":"
+
+msgctxt "error:calendar.event:"
+msgid "Cancelled Event: %s @ %s"
+msgstr "Evento Cancelado: %s @ %s"
+
+msgctxt "error:calendar.event:"
+msgid "Invitation: %s @ %s"
+msgstr "Convite: %s @ %s"
+
+msgctxt "error:calendar.event:"
+msgid ""
+"This event has been canceled.\n"
+"\n"
+msgstr ""
+"Este evento foi cancelado.\n"
+"\n"
+
+msgctxt "error:calendar.event:"
+msgid ""
+"This event has been changed.\n"
+"\n"
+msgstr ""
+"Este evento foi alterado.\n"
+"\n"
+
+msgctxt "error:calendar.event:"
+msgid "Updated Invitation: %s @ %s"
+msgstr "Convite Alterado: %s @ %s"
+
+msgctxt "error:calendar.event:"
+msgid "When"
+msgstr "Quando"
+
+msgctxt "error:calendar.event:"
+msgid ""
+"You have been invited to the following event.\n"
+"\n"
+msgstr ""
+"Você foi convidado para o seguinte enveto.\n"
+"\n"
+
+msgctxt "field:calendar.event,organizer_schedule_agent:"
+msgid "Schedule Agent"
+msgstr "Agente de Planejamento"
+
+msgctxt "field:calendar.event,organizer_schedule_status:"
+msgid "Schedule Status"
+msgstr "Estado do Planejamento"
+
+msgctxt "field:calendar.event.attendee,schedule_agent:"
+msgid "Schedule Agent"
+msgstr "Agente do Planejamento"
+
+msgctxt "field:calendar.event.attendee,schedule_status:"
+msgid "Schedule Status"
+msgstr "Estado do Planejamento"
+
+msgctxt "field:res.user,calendar_email_notification_cancel:"
+msgid "Cancelled invitations"
+msgstr "Convites cancelados"
+
+msgctxt "field:res.user,calendar_email_notification_new:"
+msgid "New invitations"
+msgstr "Novos Convites"
+
+msgctxt "field:res.user,calendar_email_notification_partstat:"
+msgid "Invitation Replies"
+msgstr "Respostas aos Convites"
+
+msgctxt "field:res.user,calendar_email_notification_update:"
+msgid "Changed invitations"
+msgstr "Convites Alterados"
+
+msgctxt "selection:calendar.event,organizer_schedule_agent:"
+msgid ""
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_agent:"
+msgid "Client"
+msgstr "Cliente"
+
+msgctxt "selection:calendar.event,organizer_schedule_agent:"
+msgid "None"
+msgstr "Nenhum"
+
+msgctxt "selection:calendar.event,organizer_schedule_agent:"
+msgid "Server"
+msgstr "Servidor"
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid ""
+msgstr ""
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "1.0"
+msgstr "1.0"
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "1.1"
+msgstr "1.1"
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "1.2"
+msgstr "1.2"
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "3.7"
+msgstr "3.7"
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "3.8"
+msgstr "3.8"
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "5.1"
+msgstr "5.1"
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "5.2"
+msgstr "5.2"
+
+msgctxt "selection:calendar.event,organizer_schedule_status:"
+msgid "5.3"
+msgstr "5.3"
+
+msgctxt "selection:calendar.event.attendee,schedule_agent:"
+msgid ""
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_agent:"
+msgid "Client"
+msgstr "Cliente"
+
+msgctxt "selection:calendar.event.attendee,schedule_agent:"
+msgid "None"
+msgstr "Nenhum"
+
+msgctxt "selection:calendar.event.attendee,schedule_agent:"
+msgid "Server"
+msgstr "Servidor"
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid ""
+msgstr ""
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "1.0"
+msgstr "1.0"
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "1.1"
+msgstr "1.1"
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "1.2"
+msgstr "1.2"
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "3.7"
+msgstr "3.7"
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "3.8"
+msgstr "3.8"
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "5.1"
+msgstr "5.1"
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "5.2"
+msgstr "5.2"
+
+msgctxt "selection:calendar.event.attendee,schedule_status:"
+msgid "5.3"
+msgstr "5.3"
+
+msgctxt "view:res.user:"
+msgid "Calendar Email Notifications"
+msgstr "Notificações de Agenda por Email"
+
+msgctxt "view:res.user:"
+msgid "Notifications"
+msgstr "Notificações"

@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    product_measurements = trytond.modules.product_measurements
+    

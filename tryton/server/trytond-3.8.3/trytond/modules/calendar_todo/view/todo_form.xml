@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form string="Todo">
+    <label name="summary"/>
+    <field name="summary"/>
+    <label name="recurrence"/>
+    <field name="recurrence"/>
+    <notebook colspan="4">
+        <page string="General" id="general">
+            <label name="location"/>
+            <field name="location"/>
+            <label name="status"/>
+            <field name="status"/>
+            <label name="classification"/>
+            <field name="classification"/>
+            <label name="calendar"/>
+            <field name="calendar"/>
+            <label name="dtstart"/>
+            <field name="dtstart"/>
+            <label name="due"/>
+            <field name="due"/>
+            <label name="percent_complete"/>
+            <field name="percent_complete"/>
+            <label name="completed"/>
+            <field name="completed"/>
+            <separator name="description" colspan="4"/>
+            <field name="description" colspan="4"/>
+        </page>
+        <page string="Categories" id="categories">
+            <field name="categories" colspan="4"/>
+        </page>
+        <page string="Attendees" id="attendees">
+            <label name="organizer"/>
+            <field name="organizer"/>
+            <field name="attendees" colspan="4"/>
+        </page>
+        <page string="Occurences" id="occurences">
+            <field name="rrules" colspan="2"/>
+            <field name="rdates" colspan="2"/>
+            <field name="exrules" colspan="2"/>
+            <field name="exdates" colspan="2"/>
+            <field name="occurences" colspan="4"
+                view_ids="calendar_todo.todo_view_tree_occurence"/>
+        </page>
+    </notebook>
+</form>

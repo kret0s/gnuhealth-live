@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    product_attribute = trytond.modules.product_attribute
+    

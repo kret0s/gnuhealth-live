@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    account_stock_continental = trytond.modules.account_stock_continental
+    

@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+
+        <record model="ir.ui.view" id="todo_view_tree">
+            <field name="model">calendar.todo</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="10"/>
+            <field name="name">todo_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="todo_view_tree_occurence">
+            <field name="model">calendar.todo</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="20"/>
+            <field name="name">todo_tree_occurence</field>
+        </record>
+
+        <record model="ir.ui.view" id="todo_view_form">
+            <field name="model">calendar.todo</field>
+            <field name="type">form</field>
+            <field name="name">todo_form</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_todo_form">
+            <field name="name">Todos</field>
+            <field name="res_model">calendar.todo</field>
+            <field name="domain" eval="[('parent', '=', None)]" pyson="1"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_todo_form_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="todo_view_tree"/>
+            <field name="act_window" ref="act_todo_form"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_todo_form_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="todo_view_form"/>
+            <field name="act_window" ref="act_todo_form"/>
+        </record>
+        <menuitem parent="calendar.menu_calendar_form" sequence="30"
+            action="act_todo_form" id="menu_todo_form"/>
+
+        <record model="ir.action.act_window" id="act_todo_form3">
+            <field name="name">Todos</field>
+            <field name="res_model">calendar.todo</field>
+            <field name="domain"
+                eval="[('parent', '=', None), ('calendar', 'in', Eval('active_ids', []))]"
+                pyson="1"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_todo_form3_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="todo_view_tree"/>
+            <field name="act_window" ref="act_todo_form3"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_todo_form3_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="todo_view_form"/>
+            <field name="act_window" ref="act_todo_form3"/>
+        </record>
+        <record model="ir.action.keyword"
+                id="act_open_todo_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">calendar.calendar,-1</field>
+            <field name="action" ref="act_todo_form3"/>
+        </record>
+
+        <record model="ir.rule.group" id="rule_group_todo_admin">
+            <field name="model" search="[('model', '=', 'calendar.todo')]"/>
+            <field name="global_p" eval="False"/>
+            <field name="default_p" eval="False"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_group_todo_admin_line1">
+            <field name="domain" eval="[]" pyson="1"/>
+            <field name="rule_group" ref="rule_group_todo_admin"/>
+        </record>
+        <record model="ir.rule.group-res.group"
+            id="rule_group_todo_admin-calendar_admin">
+            <field name="rule_group" ref="rule_group_todo_admin"/>
+            <field name="group" ref="calendar.group_calendar_admin"/>
+        </record>
+
+        <record model="ir.rule.group" id="rule_group_read_todo">
+            <field name="model" search="[('model', '=', 'calendar.todo')]"/>
+            <field name="global_p" eval="False"/>
+            <field name="default_p" eval="True"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.rule" id="rule_group_read_todo_line1">
+            <field name="domain"
+                eval="[('calendar.owner', '=', Eval('user', {}).get('id', -1))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_read_todo"/>
+        </record>
+        <record model="ir.rule" id="rule_group_read_todo_line2">
+            <field name="domain"
+                eval="[('calendar.read_users', '=', Eval('user', {}).get('id', -1))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_read_todo"/>
+        </record>
+
+        <record model="ir.rule.group" id="rule_group_write_todo">
+            <field name="model" search="[('model', '=', 'calendar.todo')]"/>
+            <field name="global_p" eval="False"/>
+            <field name="default_p" eval="True"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_group_write_todo_line1">
+            <field name="domain"
+                eval="[('calendar.owner', '=', Eval('user', {}).get('id', -1))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_write_todo"/>
+        </record>
+        <record model="ir.rule" id="rule_group_write_todo_line2">
+            <field name="domain"
+                eval="[('calendar.write_users', '=', Eval('user', {}).get('id', -1))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_write_todo"/>
+        </record>
+
+        <record model="ir.ui.view" id="attendee_view_tree">
+            <field name="model">calendar.todo.attendee</field>
+            <field name="type">tree</field>
+            <field name="name">attendee_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="attendee_view_form">
+            <field name="model">calendar.todo.attendee</field>
+            <field name="type">form</field>
+            <field name="name">attendee_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="rdate_view_tree">
+            <field name="model">calendar.todo.rdate</field>
+            <field name="type">tree</field>
+            <field name="name">rdate_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="rdate_view_form">
+            <field name="model">calendar.todo.rdate</field>
+            <field name="type">form</field>
+            <field name="name">rdate_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="exdate_view_tree">
+            <field name="model">calendar.todo.exdate</field>
+            <field name="type">tree</field>
+            <field name="name">exdate_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="exdate_view_form">
+            <field name="model">calendar.todo.exdate</field>
+            <field name="type">form</field>
+            <field name="name">exdate_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="rrule_view_tree">
+            <field name="model">calendar.todo.rrule</field>
+            <field name="type">tree</field>
+            <field name="name">rrule_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="rrule_view_form">
+            <field name="model">calendar.todo.rrule</field>
+            <field name="type">form</field>
+            <field name="name">rrule_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="exrule_view_tree">
+            <field name="model">calendar.todo.exrule</field>
+            <field name="type">tree</field>
+            <field name="name">exrule_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="exrule_view_form">
+            <field name="model">calendar.todo.exrule</field>
+            <field name="type">form</field>
+            <field name="name">exrule_form</field>
+        </record>
+
+    </data>
+</tryton>

@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    stock_supply_forecast = trytond.modules.stock_supply_forecast
+    

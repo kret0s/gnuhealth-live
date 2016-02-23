@@ -1,0 +1,6 @@
+trytond_account_credit_limit >= 3.8, < 3.9
+trytond_sale >= 3.8, < 3.9
+trytond_currency >= 3.8, < 3.9
+trytond_account_invoice >= 3.8, < 3.9
+trytond_company >= 3.8, < 3.9
+trytond >= 3.8, < 3.9

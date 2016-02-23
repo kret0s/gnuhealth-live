@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    timesheet_cost = trytond.modules.timesheet_cost
+    
