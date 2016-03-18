@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+
+this repository contains the full copyright notices and license terms. -->
+
+<form string="Students">
+	<group col="4" colspan="4" id="students" >
+	<label name="name"/>
+	<field name="name"/>
+	<label name="age"/>
+	<field name="age"/>
+    
+    <label name="percentage"/>
+    <field name="percentage"/>
+
+    <label name="school_id"/>
+    <field name="school_id"/>
+	</group>
+	
+	<field name="comment"/>
+	
+</form>
+	

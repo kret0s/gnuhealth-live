@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tree string="Students">
+    <field name="name"/>
+    <field name="age"/>
+    <field name="school_id"/>
+</tree>

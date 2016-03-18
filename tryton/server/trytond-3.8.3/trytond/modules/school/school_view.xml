@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="school_view_form">
+            <field name="model">school.school</field>
+            <field name="type">form</field>
+            <field name="inherit" eval="None"/>
+            <field name="priority">10</field>
+            <field name="name">school_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="school_view_tree">
+            <field name="model">school.school</field>
+            <field name="type">tree</field>
+            <field name="inherit" eval="None"/>
+            <field name="priority">20</field>
+            <field name="name">school_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_school_form">
+            <field name="name">School</field>
+            <field name="res_model">school.school</field>
+        </record>
+        
+        <menuitem name="School Managemnet System" sequence="0"
+            id="parent_school_menu"/>
+
+        <menuitem name="School" action="act_school_form" sequence="0" parent="parent_school_menu"
+            id="menuitems_school"/>
+        
+        
+        <record model="ir.action.act_window.view"
+            id="act_school_tree_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="school_view_tree"/>
+            <field name="act_window" ref="act_school_form"/>
+        </record>
+        <record model="ir.action.act_window.view"
+            id="act_school_form_view1">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="school_view_form"/>
+            <field name="act_window" ref="act_school_form"/>
+        </record>
+        
+		<record model="ir.action.report" id="report_school">
+            <field name="name">Students List</field>
+            <field name="model">school.school</field>
+            <field name="report_name">school.school</field>
+            <field name="report">school/school.odt</field>
+        </record>
+        
+        <record model="ir.action.keyword" id="report_school_keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">school.school,-1</field>
+            <field name="action" ref="report_school"/>
+        </record>
+
+
+		
+
+    </data>
+</tryton>

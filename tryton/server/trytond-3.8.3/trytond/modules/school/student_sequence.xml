@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tryton>
+    <data>
+
+<!-- Sequences for Student -->
+
+        <record id="seq_type_student" model="ir.sequence.type">
+            <field name="name">Student</field>
+            <field name="code">student.student</field>
+        </record>
+        
+        <record id="seq_student" model="ir.sequence">
+            <field name="name">Student</field>
+            <field name="code">student.student</field>
+            <field name="prefix">STD </field>
+            <field name="padding">4</field>
+            <field name="number_increment" eval="1"/>
+            
+        </record>
+
+        <record model="ir.property" id="property_appointment_sequence">
+            <field name="field"
+                search="[('model.model', '=', 'student.configuration'), ('name', '=', 'student_sequence')]"/>
+            <field name="value" eval="'ir.sequence,' + str(ref('seq_student'))"/>
+        </record>
+        
+    </data>
+</tryton>

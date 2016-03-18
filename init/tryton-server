@@ -1,0 +1,95 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:		tryton-server
+# Required-Start:	$syslog
+# Required-Stop:	$syslog
+# Should-Start:		$network
+# Should-Stop:		$network
+# Default-Start:	2 3 4 5
+# Default-Stop:		0 1 6
+# Short-Description:	Application Platform
+# Description:		Tryton is an Application Platform serving as a base for a complete ERP software.
+### END INIT INFO
+
+PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin"
+DAEMON="/home/cross/gnuhealth-live/tryton/server/trytond-3.8.3/bin/trytond" #path to executable file of tryton-server
+
+test -x $DAEMON || exit 0
+
+NAME="tryton-server"
+DESC="tryton-server"
+DAEMONUSER="cross" # Specify the username using which you wants to run the tryton server
+PIDDIR="/var/run/$NAME"
+PIDFILE="$PIDDIR/$NAME.pid"
+LOGFILE="/var/log/$NAME.log"
+DEFAULTS="/etc/default/tryton-server" #No use of this parameter
+CONFIGFILE="/etc/$NAME.conf" # Copy the tryton-server.conf file on the same directory
+LOGFILE="/home/cross/gnuhealth-live/tryton/server/trytond-3.8.3/bin/log.conf" # Give the path to the log.conf file
+DAEMON_OPTS="--config=$CONFIGFILE --logconf=$LOGFILE"
+
+###### DO NOT MAKE ANY CHANGES BELOW ######
+
+# Include tryton-server defaults if available
+#if [ -r "$DEFAULTS" ]; then
+#    . "$DEFAULTS"
+#fi
+
+. /lib/lsb/init-functions
+
+# Make sure trytond is started with configured locale
+#if [ -n $LANG ]; then
+#    export LANG=$LANG
+#fi
+
+#set -e
+
+do_start() {
+	if [ ! -d $PIDDIR ]; then
+	    mkdir $PIDDIR
+	    chown $DAEMONUSER:$DAEMONUSER $PIDDIR
+	fi
+
+	echo "starting"
+	start-stop-daemon --start --quiet --pidfile $PIDFILE \
+		--chuid $DAEMONUSER --background --make-pidfile \
+		--exec $DAEMON -- $DAEMON_OPTS
+	echo "startiiiiiing"
+}
+
+do_stop() {
+	start-stop-daemon --stop --quiet --pidfile $PIDFILE \
+		--oknodo
+}
+
+case "$1" in
+	start)
+	    log_daemon_msg "Starting $DESC" "$NAME"
+	    do_start
+	    log_end_msg $?
+	    echo "starteddddddddd"
+	    ;;
+
+	stop)
+	    log_daemon_msg "Stopping $DESC" "$NAME"
+	    do_stop
+	    log_end_msg $?
+	    ;;
+	restart|force-reload)
+	    log_daemon_msg "Restarting $DESC" "$NAME"
+	    do_stop
+	    sleep 1
+	    do_start
+	    log_end_msg $?
+	    ;;
+	status)
+	    status_of_proc -p $PIDFILE $DAEMON $NAME && exit 0 || exit $?
+	    ;;
+	*)
+		N=/etc/init.d/$NAME
+		echo "Usage: $N {start|stop|restart|force-reload|status}" >&2
+		exit 1
+		;;
+esac
+
+exit 0

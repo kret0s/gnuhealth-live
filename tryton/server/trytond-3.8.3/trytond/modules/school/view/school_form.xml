@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+
+this repository contains the full copyright notices and license terms. -->
+
+<form string="School" >
+     <group id="school__pic" >
+         <field xfill="0" xexpand="1" name="photo" height="200" width="200" widget="image"/>
+     </group>
+    <group col="4" colspan="2" id="school" >
+        <label name="name"/>
+        <field name="name"/>
+        <newline/>
+        <label name="code"/>
+        <field name="code"/>
+        <newline/>
+        <label name="state"/>
+        <field name="state"/>
+    </group>
+
+    <group id="school_student" col="4" colspan="4">
+    <field name="student_ids" height="250"/>
+    </group>
+    
+    <group id="school_button" col="4" colspan="4">
+    <button name="approve_school" help="Approve School" string="Approve " icon="tryton-go-next" confirm="Approve School ?"/>
+    </group>
+    
+    
+</form>

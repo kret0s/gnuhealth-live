@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="student_view_form">
+            <field name="model">student.student</field>
+            <field name="type">form</field>
+            <field name="inherit" eval="None"/>
+            <field name="priority">10</field>
+            <field name="name">student_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="student_view_tree">
+            <field name="model">student.student</field>
+            <field name="type">tree</field>
+            <field name="inherit" eval="None"/>
+            <field name="priority">20</field>
+            <field name="name">student_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_student_form">
+            <field name="name">Student</field>
+            <field name="res_model">student.student</field>
+        </record>
+        
+        <record model="ir.action.act_window.view"
+            id="act_student_tree_view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="student_view_tree"/>
+            <field name="act_window" ref="act_student_form"/>
+        </record>
+        
+        <record model="ir.action.act_window.view"
+            id="act_student_form_view">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="student_view_form"/>
+            <field name="act_window" ref="act_student_form"/>
+        </record>
+        
+        <menuitem name="Student" action="act_student_form" sequence="0" parent="parent_school_menu"
+            id="menuitems_student"/>
+
+    </data>
+</tryton>
